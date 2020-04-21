@@ -21,5 +21,21 @@ function greet(){
     const newOKButton = document.createElement('button')
     newOKButton.innerHTML = 'ok'
 
+    newOKButton.addEventListener('click', function(){
+        form.innerHTML = '<h1>Supert!</h1>'
+    })
+
     form.appendChild(newOKButton)
+
+    const newCancelButton = document.createElement('button') 
+    newCancelButton.innerHTML = 'cancel'
+
+    newCancelButton.addEventListener('click', function(){
+        form.innerHTML = ''
+        form.appendChild(name)
+        form.appendChild(email)
+        form.appendChild(submit)
+    })
+    form.appendChild(newCancelButton)
+
 }

@@ -22,7 +22,7 @@ function greet(){
     newOKButton.innerHTML = 'ok'
 
     newOKButton.addEventListener('click', function(){
-        form.innerHTML = '<h1>Supert!</h1>'
+        form.innerHTML = '<h1>Supert!</h1><p>Hva er din favoritt aktiviter?</p> '
     })
 
     form.appendChild(newOKButton)

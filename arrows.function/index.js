@@ -65,10 +65,18 @@ fetch('https://www.googleapis.com/books/v1/volumes?q=nygårdshaug')
 })
 
 const showBooks = () => {
-    books.map( book =>
-        str += `<section>${book.volumeInfo.title}</section>`
+    body.innerHTML = ''
+    books.map( book => {
+        let sec = document.createElement('section')
+        sec.innerHTML = book.volumeInfo.title
+        if(book.volumeInfo.imageLinks){
+            sec.style.backgroundImage = 'url(${book.volumeInfo.imageLinks.thumbnail})'
+        }
+        body.appendChild(sec)
+        
+    }
+    
     )
-    body.innerHTML = str
 }
 
 

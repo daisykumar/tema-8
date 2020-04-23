@@ -23,9 +23,9 @@ const antallTegn = ord => 'Dette od har ' + ord.length + ' karakterer'
 
 console.log(antallTegn('nikeodemos'))
 
-const tallene = [
-    12, 3, 4, 56, 67, 44, 34, 32
-]
+//const tallene = [
+    //12, 3, 4, 56, 67, 44, 34, 32
+//]
 
 //for(i=0;i < tallene.length - 1; i++){
     //console.log(tallene[i])

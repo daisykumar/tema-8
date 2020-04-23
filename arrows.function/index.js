@@ -50,3 +50,27 @@ ordene.map( ord => {
 
 }
 )
+
+body.innterHTML = str
+
+let books = []
+
+fetch('https://www.googleapis.com/books/v1/volumes?q=nygårdshaug')
+.then( response => response.json() )
+.then( json => {
+    console.log(json)
+    books = json.items
+    str = ''
+    showBooks()
+})
+
+const showBooks = () => {
+    books.map( book =>
+        str += `<section>${book.volumeInfo.title}</section>`
+    )
+    body.innerHTML = str
+}
+
+
+
+//HTTP RESPONSE -> JSON 

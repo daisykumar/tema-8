@@ -53,31 +53,31 @@ ordene.map( ord => {
 
 body.innterHTML = str
 
-let books = []
+//let books = []
 
-fetch('https://www.googleapis.com/books/v1/volumes?q=nygårdshaug')
-.then( response => response.json() )
-.then( json => {
-    console.log(json)
-    books = json.items
-    str = ''
-    showBooks()
-})
+//fetch('https://www.googleapis.com/books/v1/volumes?q=nygårdshaug')
+//.then( response => response.json() )
+//.then( json => {
+    //console.log(json)
+    //books = json.items
+    //str = ''
+    //showBooks()
+//})
 
-const showBooks = () => {
-    body.innerHTML = ''
-    books.map( book => {
-        let sec = document.createElement('section')
-        sec.innerHTML = book.volumeInfo.title
-        if(book.volumeInfo.imageLinks){
-            sec.style.backgroundImage = 'url(${book.volumeInfo.imageLinks.thumbnail})'
-        }
-        body.appendChild(sec)
+//const showBooks = () => {
+    //body.innerHTML = ''
+    //books.map( book => {
+        //let sec = document.createElement('section')
+        //sec.innerHTML = book.volumeInfo.title
+        //if(book.volumeInfo.imageLinks){
+            //sec.style.backgroundImage = 'url(${book.volumeInfo.imageLinks.thumbnail})'
+        //}
+        //body.appendChild(sec)
         
-    }
+    //}
     
-    )
-}
+   // )
+//}
 
 
 

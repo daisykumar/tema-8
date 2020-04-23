@@ -1,5 +1,9 @@
 html{
     scroll-snap-type: mandatory;
+    
+}
+body{
+    line-height: 1.6;
 }
 
 section{

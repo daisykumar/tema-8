@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+main{
+    display: grid;
+    grid-template-rows: 10vh 1fr;
+    padding: .7rem;
+    gap: .6rem;
+}
+
+input{
+    padding: .7rem;
+    font-size: 18px;
+}
+
+#characters{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        gap: .6rem;
+}
+

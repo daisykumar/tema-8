@@ -13,15 +13,20 @@ showAlarmButton.addEventListener('click', () =>{
 
 let setAlarmButton = document.querySelector('#setAlarm')
 let alarmSet = false
+let alarmTime = {}
+
 setAlarmButton.addEventListener('click', ()=> {
     let hours = document.querySelector('#hours').value
     let minutes = document.querySelector('#minutes').value
 
     alarmSet = true 
     alarmDiv.innerHTML = 'alarm set to: ' + hours + ':' + minutes
+    alarmTime.hours = hours
+    alarmTime.minutes = minutes
 })
 
 let pos = 0
+
 
 const time = () => {
 let t = new Date()
@@ -29,6 +34,13 @@ let hours = t.getHours()
 let min = t.getMinutes()
 let sec = t.getSeconds()
 let ms = t.getMilliseconds()
+
+if(alarmSet){
+    if(alarmTime.hours === hours && alarmTimeminutes == min){
+        circle.innerHTML = '<h1>ALARM</h1>'
+        return
+    }
+}
 
 sec = sec < 10 ? '0' + sec : sec
 

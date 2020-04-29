@@ -9,7 +9,6 @@ var form =  document.querySelector("form");
 var todoList = document.querySelector("ul");
 var button = document.querySelector("button");
 var input = document.getElementById("user-todo");
-//Work on the code for close button
 
 
 //add an eventListener to the form to capture the user input on the submit event.
@@ -31,6 +30,7 @@ var todoMaker = function (text){
     var todo = document.createElement('li');
     todo.textContent = text;
     todoList.appendChild(todo);
+    
     //syntax of appendChild is node.appendChild(node). The node object is required which you 
         //want to append. The appendChild() method appends a node as the last child of a node.
 }
@@ -45,9 +45,19 @@ button.addEventListener('click', function(){
     }
 });
 
-//I also wanted to create a cross button and append it to each node list.
+//I also wanted to create a cross button and append it to each node list. So use createElement
+	// START ADD DELETE BUTTON
+var dbtn = document.createElement("button");
+dbtn.appendChild(document.createTextNode("X"));
+li.appendChild(dbtn);
+dbtn.addEventListener("click", deleteListItem);
+    // END ADD DELETE BUTTON
 
-
+	//ADD CLASS DELETE (DISPLAY: NONE)
+	function deleteListItem(){
+		li.classList.add("delete")
+	}
+	//END ADD CLASS DELETE
 
 
 

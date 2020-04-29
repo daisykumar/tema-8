@@ -56,8 +56,8 @@ h1 {
 }
 
 
-ul {
-	text-align: left;
+/*ul {
+	text-align: center;
 	margin-top: 20px;
 }
 
@@ -66,8 +66,8 @@ li {
 	list-style: none;
 	padding: 10px 20px;
 	color: #9b1f1f;
-	text-transform: capitalize;
-	font-weight: 600;
+    font-weight: 600;
+    justify-content: center;
 	border-radius: 5px;
 	margin-bottom: 10px;
 	background: #85FFED;
@@ -79,14 +79,22 @@ li {
 }
 
 li:hover {
-	background: #4BB368;
+	background: rgb(48, 230, 202);
 }
 
 li > button {
 	font-weight: normal;
 	background: none;
 	border: none;
-	float: right;
 	color: #D1FFB8;
 	font-weight: 800;
+}
+*/
+#clear{
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #85FFED;
+    border-radius: 5px;
+    
 }

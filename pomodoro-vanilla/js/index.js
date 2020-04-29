@@ -46,18 +46,9 @@ button.addEventListener('click', function(){
 });
 
 //I also wanted to create a cross button and append it to each node list. So use createElement
-	// START ADD DELETE BUTTON
-var dbtn = document.createElement("button");
-dbtn.appendChild(document.createTextNode("X"));
-li.appendChild(dbtn);
-dbtn.addEventListener("click", deleteListItem);
-    // END ADD DELETE BUTTON
+    // START ADD DELETE BUTTON
 
-	//ADD CLASS DELETE (DISPLAY: NONE)
-	function deleteListItem(){
-		li.classList.add("delete")
-	}
-	//END ADD CLASS DELETE
+
 
 
 

@@ -4,6 +4,40 @@ var unitTextObject = document.querySelector('.unit')
 var startButton    = document.querySelector('.button')
 let timer
 
+//querySelector til to-do list
+var form =  document.querySelector("form");
+var todoList = document.querySelector("ul");
+var button = document.querySelector("button");
+var input = document.getElementById("user-todo");
+form.addEventListener('submit', function(f){
+    f.preventDefault();
+    todoMaker(input.value);
+    input.value = '';
+});
+
+    // Step 3 -> create a todoMaker function that creates 'li' elements with the text user provides
+    // from their form and appends it to the 'ul'.
+
+var todoMaker = function (text){
+    var todo = document.createElement('li');
+    todo.textContent = text;
+    todoList.appendChild(todo);
+}
+
+    // Step 4 -> attach an event listener to the `clear all` button listening for
+    // a user click.
+    // In the function use a while loop checking to see whether there
+      // is an li element as a child of the `ul` tag. In the code block use the
+      // removeChild() DOM method to removed that `li` using the firstChild property.
+button.addEventListener('click', function(){
+    while (todoList.firstChild){
+        todoList.removeChild(todoList.firstChild);
+    }
+});
+//querySelector til to-do list
+
+
+
 let time = {
     minutes:25,
     seconds:0

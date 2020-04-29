@@ -9,35 +9,50 @@ var form =  document.querySelector("form");
 var todoList = document.querySelector("ul");
 var button = document.querySelector("button");
 var input = document.getElementById("user-todo");
+//Work on the code for close button
 
+
+//add an eventListener to the form to capture the user input on the submit event.
 form.addEventListener('submit', function(f){
+    //I needed to run/use preventDefault to stop the page from refreshing when the user
+        //types in his input. 
+    //Added f as I used (f) in the parameter of the function. One can add any value here.
     f.preventDefault();
+    //Then I call a todoMaker function which I created in the next step to pass it to the 
+        //the 'input' variable to target the value that the user will enter.
     todoMaker(input.value);
+    //Finally, here left the input.value blank or an empty string to take let the user enter whatever he/she wants to.
     input.value = '';
 });
 
-// Step 3 -> create a todoMaker function that creates 'li' elements with the text user provides
-// from their form and append it to the 'ul'.
-
+// Step 2 -> A todoMaker is a that will capture what 
+    // user types in the input and enters submit a 'li' list is created.
 var todoMaker = function (text){
     var todo = document.createElement('li');
     todo.textContent = text;
     todoList.appendChild(todo);
+    //syntax of appendChild is node.appendChild(node). The node object is required which you 
+        //want to append. The appendChild() method appends a node as the last child of a node.
 }
 
-// Step 4 -> attach an event listener to the `clear all` button listening for a user click.
-    // In the function use a while loop checking to see whether there
-      // is an li element as a child of the `ul` tag. In the code block use the
-      // removeChild() DOM method to removed that `li` using the firstChild property.
+// Step 3 -> Attach an event listener to the `clear all` button when the user clicks.
+    // In the function, used a while loop checking to see whether there
+      // is an li element as a child of the `ul` tag. In the code block, used the
+      // removeChild() DOM method to remove that `li`, using the firstChild property.
 button.addEventListener('click', function(){
     while (todoList.firstChild){
         todoList.removeChild(todoList.firstChild);
     }
 });
-//querySelector til to-do list
+
+//I also wanted to create a cross button and append it to each node list.
 
 
 
+
+
+
+//the pomodora code starts here
 let time = {
     minutes:25,
     seconds:0
@@ -50,7 +65,7 @@ startButton.addEventListener('click', ()=>{
 })
 
 
-//appens 'motor', runs after evert sec
+//appens 'motor', runs after every sec
 const tick = () => {
     if(time.minutes == 0 && time.seconds == 0){
         alarm()

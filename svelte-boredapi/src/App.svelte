@@ -1,27 +1,49 @@
 <script>
+	import Activity from './components/Activity.svelte'
+	let activity = {}
+	let show = false
+	//let type = 'recreational'
+	const getActivity = () =>{
+		show = false
+		fetch('https://www.boredapi.com/api/activity?type=recreational')
+			.then( res => res.json() )
+				.then( json => activity = json )
+				.then( json => {
+					activity = json
+					show = true
+				})
+		}
 
-	let name = 'Per'
-	let show = false	
 
 </script>
 
 <main>
+	<button on:click={getActivity}>Hit Me</button>
+	<!--input type="type" bind:value={type}-->
 	{#if show}
-	<h1>Hei {name}</h1>
-
+		<!--Content here-->
+		<Activity {activity} />
 	{:else}
-		<h2>nothing to show</h2>
+		<!--Content here-->
+		<h2>Show Content here</h2>
 	{/if}
-	<input type="text" bind:value={name}>
-	<button on:click={ () => show= !show}>Vis Hilsen</button>
-
+	<Activity activity={activity} />
 </main>
 
 <style>
-/* */
+
 	main{
 		display: grid;
 		place-items: center;
 		height: 100vh;
+		position: relative;
 	}
+	button{
+		position: absolute;
+		top: 2rem;
+		background: rgb(32, 44, 48);
+		color: #eee;
+		cursor: pointer;
+	}
+
 </style>

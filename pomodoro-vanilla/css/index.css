@@ -56,7 +56,7 @@ h1 {
 }
 
 
-/*ul {
+ul {
 	text-align: center;
 	margin-top: 20px;
 }
@@ -89,12 +89,12 @@ li > button {
 	color: #D1FFB8;
 	font-weight: 800;
 }
-*/
+
 #clear{
     justify-content: center;
     padding: 10px 20px;
     font-size: 1rem;
-    background: #85FFED;
+    background: rgb(210, 223, 219);
     border-radius: 5px;
     
 }

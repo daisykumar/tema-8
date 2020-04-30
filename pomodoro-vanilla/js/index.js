@@ -30,6 +30,11 @@ var todoMaker = function (text){
     var todo = document.createElement('li');
     todo.textContent = text;
     todoList.appendChild(todo);
+
+    //click eventlistner
+    todo.addEventListener('click', function(){
+        todo.parentNode.removeChild(todo)
+    })
     
     //syntax of appendChild is node.appendChild(node). The node object is required which you 
         //want to append. The appendChild() method appends a node as the last child of a node.
@@ -41,7 +46,7 @@ var todoMaker = function (text){
       // removeChild() DOM method to remove that `li`, using the firstChild property.
 button.addEventListener('click', function(){
     while (todoList.firstChild){
-        todoList.removeChild(todoList.firstChild);
+        todoList.removeChild(todoList.firstChild("X"));
     }
 });
 

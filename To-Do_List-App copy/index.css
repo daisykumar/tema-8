@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    min-width: 300px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.the-header{
+    background-color: blueviolet;
+    padding: 30px 42px;
+    color: white;
+    text-align: center;
+}
+
+.the-header:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#the-input{
+    width: 70%;
+    padding: 15px;
+    font-size: 16px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.create-button{
+    padding: 15px;
+    width: 30%;
+    background-color: rgb(77, 71, 71);
+    font-size: 16px;
+    color: #f8f1f1;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.create-button:hover{
+    background-color: rgb(226, 218, 218);
+    color: blueviolet;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    position: relative;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 10px 6px 10px 30px;
+    transition: 0.3s;
+    /* making list unselectable*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+ul li:nth-child(odd){
+    background-color: #f6f9f3;
+}
+
+ul li.checked::before{
+    content: '';
+    position: absolute;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 10px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 10px;
+}
+
+ul li:hover{
+    background-color: #ddd;
+}
+
+.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px 10px 15px;
+}
+
+.close:hover{
+    background: blueviolet;
+}
+

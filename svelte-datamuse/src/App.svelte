@@ -1,30 +1,35 @@
 <script>
-	export let name;
+	import Datamuse from './components/Datamuse.svelte'
+	let words = ''
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<div class="input">
+	<input type="text" bind:value={words}>
+	</div>
+	<Datamuse {words}/>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+
+    main{
+        display: grid;
+		grid-template-rows: 10vh 90vh;
+    }
+
+	.input{
+		display: grid;
+		place-items: center;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	input{
+		width: 40vw;
+		font-size: 1.2rem;
+		padding: .8rem;
+		outline: none;
+		border-radius: 1rem;
 	}
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	
+
 </style>

@@ -24,7 +24,7 @@
 {#if gif}
     <img src="{gif}" alt="{q}">
 {:else}
-    <h2>fetching image</h2>
+    <h2>Fetching image</h2>
 {/if}   
 
 </main>
@@ -49,12 +49,5 @@
 		display:grid;
 		padding: 0 20vw 0 20vw;
 	}
-	.article{
-		width:40vw;
-		height:40vh;
-		background-color:#eee;
-		padding:2rem;
-	}
-
 
 </style>

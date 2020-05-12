@@ -18,7 +18,14 @@
 <main>
 
 <header>
-	<input placeholder="Search for gif" type="text" bind:value={q} on:keydown={(key) => key.key == "Enter"? getgif():''}>
+
+	<input 
+    placeholder="type to search" 
+    bind:value={q}  
+    on:keydown= { event => event.key == 'Enter' ? getGif() : ''}//ditt funksjonsnavn!!}
+    on:click={ e => e.target.value=''}
+    on:focus={ e => e.target.value = '' }>	
+	
 	<button on:click={getgif}>Søk</button>
 </header>
 	

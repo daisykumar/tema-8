@@ -305,7 +305,9 @@ var app = (function () {
     	let p;
     	let t2;
     	let t3;
-    	let button;
+    	let button0;
+    	let t5;
+    	let button1;
     	let dispose;
 
     	const block = {
@@ -317,12 +319,16 @@ var app = (function () {
     			p = element("p");
     			t2 = text(/*info*/ ctx[0]);
     			t3 = space();
-    			button = element("button");
-    			button.textContent = "Klikk på meg";
-    			add_location(h1, file, 13, 1, 288);
-    			add_location(p, file, 14, 1, 317);
-    			add_location(button, file, 15, 1, 332);
-    			add_location(main, file, 12, 0, 280);
+    			button0 = element("button");
+    			button0.textContent = "Klikk på meg";
+    			t5 = space();
+    			button1 = element("button");
+    			button1.textContent = "Online?";
+    			add_location(h1, file, 18, 1, 422);
+    			add_location(p, file, 19, 1, 451);
+    			add_location(button0, file, 20, 1, 466);
+    			add_location(button1, file, 21, 1, 535);
+    			add_location(main, file, 17, 0, 414);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -334,8 +340,14 @@ var app = (function () {
     			append_dev(main, p);
     			append_dev(p, t2);
     			append_dev(main, t3);
-    			append_dev(main, button);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false);
+    			append_dev(main, button0);
+    			append_dev(main, t5);
+    			append_dev(main, button1);
+
+    			dispose = [
+    				listen_dev(button0, "click", /*click_handler*/ ctx[3], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[4], false, false, false)
+    			];
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*info*/ 1) set_data_dev(t2, /*info*/ ctx[0]);
@@ -344,7 +356,7 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -373,8 +385,25 @@ var app = (function () {
     		};
     	};
 
+    	const amIonline = () => {
+    		window.alert(navigator.onLine
+    		? "you're online sirs"
+    		: "you're offline");
+
+    		$$invalidate(0, info = "Alert accepted");
+    	};
+
     	const click_handler = () => showNotification();
-    	$$self.$capture_state = () => ({ info, showNotification, Notification });
+    	const click_handler_1 = () => amIonline();
+
+    	$$self.$capture_state = () => ({
+    		info,
+    		showNotification,
+    		amIonline,
+    		Notification,
+    		window,
+    		navigator
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("info" in $$props) $$invalidate(0, info = $$props.info);
@@ -384,7 +413,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [info, showNotification, click_handler];
+    	return [info, showNotification, amIonline, click_handler, click_handler_1];
     }
 
     class App extends SvelteComponentDev {

@@ -9,11 +9,17 @@
 			info = 'Notification clicked'
 		}
 	}
+
+	const amIonline = () => {
+		window.alert(navigator.onLine ? 'you\'re online sirs' : 'you\'re offline')
+		info = 'Alert accepted'
+	}
 </script>
 <main>
 	<h1>Svelte in Electron</h1>
 	<p>{info}</p>
 	<button on:click={ () => showNotification() }>Klikk på meg</button>
+	<button on:click={ () => amIonline() }>Online?</button>
 </main>
 
 <style>

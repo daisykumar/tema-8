@@ -24,6 +24,10 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
     function insert(target, node, anchor) {
         target.insertBefore(node, anchor || null);
     }
@@ -32,6 +36,16 @@ var app = (function () {
     }
     function element(name) {
         return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
     }
     function children(element) {
         return Array.from(element.childNodes);
@@ -231,6 +245,10 @@ var app = (function () {
     function dispatch_dev(type, detail) {
         document.dispatchEvent(custom_event(type, Object.assign({ version: '3.19.1' }, detail)));
     }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
     function insert_dev(target, node, anchor) {
         dispatch_dev("SvelteDOMInsert", { target, node, anchor });
         insert(target, node, anchor);
@@ -238,6 +256,26 @@ var app = (function () {
     function detach_dev(node) {
         dispatch_dev("SvelteDOMRemove", { node });
         detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
     }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
@@ -262,23 +300,51 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
+    	let h1;
+    	let t1;
+    	let p;
+    	let t2;
+    	let t3;
+    	let button;
+    	let dispose;
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			add_location(main, file, 3, 0, 20);
+    			h1 = element("h1");
+    			h1.textContent = "Svelte in Electron";
+    			t1 = space();
+    			p = element("p");
+    			t2 = text(/*info*/ ctx[0]);
+    			t3 = space();
+    			button = element("button");
+    			button.textContent = "Klikk på meg";
+    			add_location(h1, file, 13, 1, 288);
+    			add_location(p, file, 14, 1, 317);
+    			add_location(button, file, 15, 1, 332);
+    			add_location(main, file, 12, 0, 280);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			append_dev(main, h1);
+    			append_dev(main, t1);
+    			append_dev(main, p);
+    			append_dev(p, t2);
+    			append_dev(main, t3);
+    			append_dev(main, button);
+    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false);
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*info*/ 1) set_data_dev(t2, /*info*/ ctx[0]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			dispose();
     		}
     	};
 
@@ -293,10 +359,38 @@ var app = (function () {
     	return block;
     }
 
+    function instance($$self, $$props, $$invalidate) {
+    	let info = "Nothing special yet :)";
+
+    	const showNotification = () => {
+    		let myNotification = new Notification("Hello",
+    		{
+    				body: "You are now officially a part of the system OS"
+    			});
+
+    		myNotification.onclick = () => {
+    			$$invalidate(0, info = "Notification clicked");
+    		};
+    	};
+
+    	const click_handler = () => showNotification();
+    	$$self.$capture_state = () => ({ info, showNotification, Notification });
+
+    	$$self.$inject_state = $$props => {
+    		if ("info" in $$props) $$invalidate(0, info = $$props.info);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [info, showNotification, click_handler];
+    }
+
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment, safe_not_equal, {});
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

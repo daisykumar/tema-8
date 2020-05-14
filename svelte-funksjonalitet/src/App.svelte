@@ -22,7 +22,6 @@
 	<input 
     placeholder="type to search" 
     bind:value={q}  
-    on:keydown= { event => event.key == 'Enter' ? getGif() : ''}//ditt funksjonsnavn!!}
     on:click={ e => e.target.value=''}
     on:focus={ e => e.target.value = '' }>	
 	

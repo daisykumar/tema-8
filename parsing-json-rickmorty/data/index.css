@@ -1,0 +1,43 @@
+body,
+html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+main{
+    display: grid;
+    grid-template-rows: 10vh 1fr;
+    padding: .6rem;
+    gap:.6rem
+
+}
+input{
+    padding: .6rem;
+    font-size: 18px;
+
+}
+#characters{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: .6rem;
+}
+
+article{
+    background-color: #aaa;
+    padding: .6rem;
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 8px 2px lightgray;
+    color:  #333;
+    background-size: cover;
+
+
+}

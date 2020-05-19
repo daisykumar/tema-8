@@ -21,8 +21,8 @@
 
     import TodoItems from './TodoItems.svelte';
     
-    import Datepicker from  'praecox-datepicker'; //To import calender 
-    let pickerResult = [];
+    //import Datepicker from  'praecox-datepicker'; //To import calender 
+    //let pickerResult = [];
 
     let newTodoTitle = '';
     let currentFilter = 'all';

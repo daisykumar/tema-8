@@ -33,7 +33,7 @@
     </div>
 
     <div class="remove-item" on:click={deleteTodo}>
-         <i class="fas fa-times"></i>
+         x
     </div>
 </main>
 

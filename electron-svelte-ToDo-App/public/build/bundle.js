@@ -688,19 +688,19 @@ var app = (function () {
     			div2 = element("div");
     			i = element("i");
     			attr_dev(input, "type", "checkbox");
-    			add_location(input, file, 32, 8, 638);
-    			attr_dev(div0, "class", "todo-item-label svelte-199hpxt");
+    			add_location(input, file, 30, 8, 636);
+    			attr_dev(div0, "class", "todo-item-label svelte-drupi7");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
-    			add_location(div0, file, 33, 8, 722);
-    			attr_dev(div1, "class", "todo-item-left svelte-199hpxt");
-    			add_location(div1, file, 31, 8, 557);
+    			add_location(div0, file, 31, 8, 720);
+    			attr_dev(div1, "class", "todo-item-left svelte-drupi7");
+    			add_location(div1, file, 29, 8, 555);
     			attr_dev(i, "class", "fas fa-times");
-    			add_location(i, file, 37, 9, 866);
-    			attr_dev(div2, "class", "remove-item svelte-199hpxt");
-    			add_location(div2, file, 36, 4, 809);
-    			attr_dev(div3, "class", "todo-item svelte-199hpxt");
-    			add_location(div3, file, 30, 4, 525);
-    			add_location(main, file, 29, 0, 514);
+    			add_location(i, file, 35, 9, 864);
+    			attr_dev(div2, "class", "remove-item svelte-drupi7");
+    			add_location(div2, file, 34, 4, 807);
+    			attr_dev(div3, "class", "todo-item svelte-drupi7");
+    			add_location(div3, file, 28, 4, 523);
+    			add_location(main, file, 27, 0, 512);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -894,7 +894,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (101:8) {#each filteredTodos as todo}
+    // (102:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -913,8 +913,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
-    			attr_dev(div, "class", "todo-item svelte-1gxnsqi");
-    			add_location(div, file$1, 101, 12, 3749);
+    			attr_dev(div, "class", "todo-item svelte-1krwavc");
+    			add_location(div, file$1, 102, 12, 3683);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -947,7 +947,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(101:8) {#each filteredTodos as todo}",
+    		source: "(102:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1037,40 +1037,40 @@ var app = (function () {
     			div5 = element("div");
     			button3 = element("button");
     			button3.textContent = "Clear Completed";
-    			attr_dev(h1, "class", "svelte-1gxnsqi");
-    			add_location(h1, file$1, 96, 8, 3537);
+    			attr_dev(h1, "class", "svelte-1krwavc");
+    			add_location(h1, file$1, 96, 8, 3470);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", "todo-input svelte-1gxnsqi");
+    			attr_dev(input0, "class", "todo-input svelte-1krwavc");
     			attr_dev(input0, "placeholder", "e.g. Build an app...");
-    			add_location(input0, file$1, 97, 8, 3565);
-    			attr_dev(div0, "class", "container svelte-1gxnsqi");
-    			add_location(div0, file$1, 95, 4, 3505);
-    			attr_dev(input1, "class", "inner-container-input svelte-1gxnsqi");
+    			add_location(input0, file$1, 97, 8, 3498);
+    			attr_dev(div0, "class", "container svelte-1krwavc");
+    			add_location(div0, file$1, 94, 4, 3433);
+    			attr_dev(input1, "class", "inner-container-input svelte-1krwavc");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 106, 24, 3984);
-    			add_location(label, file$1, 106, 17, 3977);
-    			add_location(div1, file$1, 106, 12, 3972);
-    			add_location(div2, file$1, 107, 12, 4099);
-    			attr_dev(div3, "class", "inner-container svelte-1gxnsqi");
-    			add_location(div3, file$1, 105, 8, 3930);
-    			add_location(strong, file$1, 111, 102, 4311);
-    			attr_dev(button0, "class", "svelte-1gxnsqi");
+    			add_location(input1, file$1, 107, 24, 3918);
+    			add_location(label, file$1, 107, 17, 3911);
+    			add_location(div1, file$1, 107, 12, 3906);
+    			add_location(div2, file$1, 108, 12, 4033);
+    			attr_dev(div3, "class", "inner-container svelte-1krwavc");
+    			add_location(div3, file$1, 106, 8, 3864);
+    			add_location(strong, file$1, 112, 102, 4245);
+    			attr_dev(button0, "class", "svelte-1krwavc");
     			toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button0, file$1, 111, 16, 4225);
-    			attr_dev(button1, "class", "svelte-1gxnsqi");
+    			add_location(button0, file$1, 112, 16, 4159);
+    			attr_dev(button1, "class", "svelte-1krwavc");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button1, file$1, 112, 16, 4357);
-    			attr_dev(button2, "class", "svelte-1gxnsqi");
+    			add_location(button1, file$1, 113, 16, 4291);
+    			attr_dev(button2, "class", "svelte-1krwavc");
     			toggle_class(button2, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button2, file$1, 113, 16, 4481);
-    			add_location(div4, file$1, 110, 12, 4203);
-    			attr_dev(button3, "class", "svelte-1gxnsqi");
-    			add_location(button3, file$1, 116, 16, 4654);
-    			add_location(div5, file$1, 115, 12, 4632);
-    			attr_dev(div6, "class", "inner-container svelte-1gxnsqi");
-    			add_location(div6, file$1, 109, 8, 4161);
-    			attr_dev(main, "class", "svelte-1gxnsqi");
-    			add_location(main, file$1, 93, 0, 3493);
+    			add_location(button2, file$1, 114, 16, 4415);
+    			add_location(div4, file$1, 111, 12, 4137);
+    			attr_dev(button3, "class", "svelte-1krwavc");
+    			add_location(button3, file$1, 117, 16, 4588);
+    			add_location(div5, file$1, 116, 12, 4566);
+    			attr_dev(div6, "class", "inner-container svelte-1krwavc");
+    			add_location(div6, file$1, 110, 8, 4095);
+    			attr_dev(main, "class", "svelte-1krwavc");
+    			add_location(main, file$1, 92, 0, 3421);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1230,6 +1230,7 @@ var app = (function () {
     		}
     	];
 
+    	//Code for Calendar here
     	function addTodo(event) {
     		if (event.key === "Enter") {
     			$$invalidate(11, todos = [

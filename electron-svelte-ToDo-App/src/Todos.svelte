@@ -21,8 +21,7 @@
 
     import TodoItems from './TodoItems.svelte';
     
-    //import Datepicker from  'praecox-datepicker'; //To import calender 
-    //let pickerResult = [];
+  
 
     let newTodoTitle = '';
     let currentFilter = 'all';
@@ -48,7 +47,7 @@
             completed: false
         }
     ];
-
+    //Code for Calendar here
 
 
     function addTodo(event) {
@@ -94,8 +93,10 @@
 <main>
 
     <div class="container">
+    
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="e.g. Build an app..." bind:value={newTodoTitle} on:keydown={addTodo} >
+
 
     </div>
         {#each filteredTodos as todo}
@@ -144,7 +145,6 @@
         font-size: 18px;
         margin-bottom: 20px;
     }
-
 
     .todo-item{
         background-color: none;

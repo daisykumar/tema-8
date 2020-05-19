@@ -23,8 +23,6 @@
     }
     
 
-
-
 </script>
 
 <main>
@@ -53,7 +51,7 @@
         margin-left: 15px;
     }
 
-    .remove-item:hover{
+    .remove-item:hover {
         color: lightseagreen; 
     }
     .todo-item-left {

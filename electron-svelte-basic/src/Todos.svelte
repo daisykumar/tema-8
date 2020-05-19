@@ -21,8 +21,7 @@
 
     import TodoItems from './TodoItems.svelte';
     
-    import Datepicker from  'praecox-datepicker'; //To import calender 
-    let pickerResult = [];
+  
 
     let newTodoTitle = '';
     let currentFilter = 'all';
@@ -48,25 +47,7 @@
             completed: false
         }
     ];
-    //Code for Calendar
-   function formatDate(v){
-        //let date = v===0?new Date():new Date(v); //this code was taking incorrect values
-        let date = new Date(v); //this lets the user to do back and forth with the calendar
-		let year = date.getFullYear();
-		let month = date.getMonth()+1; //why is there +1 here?
-		let day = date.getDate();
-		return  day+'-'+month+'-'+year;
-    }
-    
-    //need to fix one thing: if the user comes out of the input without setting the date the
-        //calender doesn't close. 
-	function isShow(){
-		show = true
-	}
-    function pickerDone(){
-        if(pickerResult.length!==0 && pickerResult[1].end!==0 && pickerResult[0].start!==pickerResult[1].end){
-        show = false
-    }}
+    //Code for Calendar here
 
 
     function addTodo(event) {
@@ -112,24 +93,10 @@
 <main>
 
     <div class="container">
-        <div class="icon">
-	        <i class="fas fa-tasks fa-10x"></i>
-        </div>
+    
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="e.g. Build an app..." bind:value={newTodoTitle} on:keydown={addTodo} >
 
-        <input value='{(pickerResult.length===0? `Enter a Start Date`:formatDate(pickerResult[0].start))
-        +' to '+ (pickerResult.length===0 ? 
-        `End Date here`:formatDate(pickerResult[1].end))}' 
-        on:click={isShow} class="calendar-input"/>
-
-        {#if show}
-        <div on:click={pickerDone}>
-            <Datepicker 
-                pickerRule='rangeChoice' 
-                bind:pickerResult={pickerResult}/>
-        </div>
-        {/if}
 
     </div>
         {#each filteredTodos as todo}
@@ -171,11 +138,7 @@
        
     }
 
-    .icon{
-        color:lightseagreen;
-        display: grid;
-        justify-content: center;
-    }
+
     .todo-input {
         width: 100%;
         padding: 10px, 20px;
@@ -183,10 +146,6 @@
         margin-bottom: 20px;
     }
 
-    .calendar-input{
-        width: 100%;
-        background-color: whitesmoke;
-    }
     .todo-item{
         background-color: none;
        

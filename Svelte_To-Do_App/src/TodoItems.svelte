@@ -2,6 +2,7 @@
     //This is the child component that handles single to-do items
     import { createEventDispatcher } from 'svelte';
     import { fly } from 'svelte/transition';
+    
 
     export let id;
     export let title;
@@ -19,8 +20,16 @@
         dispatch('toggleComplete',{
             id: id
         });
-
     }
+    
+    //why is the below function not working?
+    function setEditTodo(){
+        dispatch('setEditTodo',{
+            id: id
+        });
+    }
+
+
 </script>
 
 <main>
@@ -29,15 +38,16 @@
         <input type="checkbox" bind:checked={completed} on:change={toggleComplete}>
         <div class="todo-item-label" class:completed={completed}>{title}</div>
     </div>
-
+    <div class="edit-item">
+        <i class="fas fa-pen"></i> 
+    </div>
     <div class="remove-item" on:click={deleteTodo}>
-        x
+         <i class="fas fa-times"></i>
     </div>
 </main>
 
+
 <style>
-
-
     .todo-item {
         margin-bottom: 15px;
         display: flex;
@@ -49,7 +59,8 @@
         cursor: pointer;
         margin-left: 15px;
     }
-    .remove-item:hover {
+
+    .remove-item:hover, .edit-item:hover {
         color: lightseagreen; 
     }
     .todo-item-left {

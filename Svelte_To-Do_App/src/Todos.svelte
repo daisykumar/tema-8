@@ -20,9 +20,17 @@
 
 
     import TodoItems from './TodoItems.svelte';
+    
+    import Datepicker from  'praecox-datepicker'; //To import calender 
+    let pickerResult = [];
+
     let newTodoTitle = '';
     let currentFilter = 'all';
     let nextId = 4;
+
+	let show = false;
+	let count = 1;
+
     let todos = [
         {
             id: 1,
@@ -40,6 +48,27 @@
             completed: false
         }
     ];
+    //Code for Calendar
+   function formatDate(v){
+        //let date = v===0?new Date():new Date(v); //this code was taking incorrect values
+        let date = new Date(v); //this lets the user to do back and forth with the calendar
+		let year = date.getFullYear();
+		let month = date.getMonth()+1; //why is there +1 here?
+		let day = date.getDate();
+		return  day+'-'+month+'-'+year;
+    }
+    
+    //need to fix one thing: if the user comes out of the input without setting the date the
+        //calender doesn't close. 
+	function isShow(){
+		show = true
+	}
+    function pickerDone(){
+        if(pickerResult.length!==0 && pickerResult[1].end!==0 && pickerResult[0].start!==pickerResult[1].end){
+        show = false
+    }}
+
+
     function addTodo(event) {
         if (event.key === 'Enter') {
             todos = [...todos, {
@@ -77,9 +106,11 @@
             ...todos.slice(todoIndex+1)
         ];
     }
+
 </script>
 
 <main>
+
     <div class="container">
         <div class="icon">
 	        <i class="fas fa-tasks fa-10x"></i>
@@ -87,6 +118,20 @@
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="e.g. Build an app..." bind:value={newTodoTitle} on:keydown={addTodo} >
 
+        <input value='{(pickerResult.length===0? `Enter a Start Date`:formatDate(pickerResult[0].start))
+        +' to '+ (pickerResult.length===0 ? 
+        `End Date here`:formatDate(pickerResult[1].end))}' 
+        on:click={isShow} class="calendar-input"/>
+
+        {#if show}
+        <div on:click={pickerDone}>
+            <Datepicker 
+                pickerRule='rangeChoice' 
+                bind:pickerResult={pickerResult}/>
+        </div>
+        {/if}
+
+    </div>
         {#each filteredTodos as todo}
             <div class="todo-item">
                 <TodoItems {...todo} on:deleteTodo={handleDeleteTodo} on:toggleComplete={handleToggleComplete} />
@@ -107,14 +152,15 @@
             </div>
         </div>
 
-    </div>
 </main>
 
 <style>
-
+    main{
+        padding: 0 20px 20px 20px;
+    }
     .container {
         max-width: 800px;
-        margin: 10px auto;
+        margin: 20px auto;
     }
     h1{
         font-size: 100px;
@@ -122,6 +168,7 @@
         text-align: center;
         margin: 0 50px 0 50px;
         padding: 0 50px 20px 50px;
+       
     }
 
     .icon{
@@ -136,9 +183,13 @@
         margin-bottom: 20px;
     }
 
+    .calendar-input{
+        width: 100%;
+        background-color: whitesmoke;
+    }
     .todo-item{
         background-color: none;
-
+       
     }
     .inner-container {
         display: flex;
@@ -166,7 +217,9 @@
     button:focus {
         outline: none;
     }
-    .active {
+    .active, .completed {
         background: lightseagreen;
     }
+
+
 </style>

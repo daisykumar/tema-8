@@ -688,19 +688,19 @@ var app = (function () {
     			div2 = element("div");
     			i = element("i");
     			attr_dev(input, "type", "checkbox");
-    			add_location(input, file, 29, 8, 635);
+    			add_location(input, file, 32, 8, 638);
     			attr_dev(div0, "class", "todo-item-label svelte-199hpxt");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
-    			add_location(div0, file, 30, 8, 719);
+    			add_location(div0, file, 33, 8, 722);
     			attr_dev(div1, "class", "todo-item-left svelte-199hpxt");
-    			add_location(div1, file, 28, 8, 554);
+    			add_location(div1, file, 31, 8, 557);
     			attr_dev(i, "class", "fas fa-times");
-    			add_location(i, file, 34, 9, 863);
+    			add_location(i, file, 37, 9, 866);
     			attr_dev(div2, "class", "remove-item svelte-199hpxt");
-    			add_location(div2, file, 33, 4, 806);
+    			add_location(div2, file, 36, 4, 809);
     			attr_dev(div3, "class", "todo-item svelte-199hpxt");
-    			add_location(div3, file, 27, 4, 522);
-    			add_location(main, file, 26, 0, 511);
+    			add_location(div3, file, 30, 4, 525);
+    			add_location(main, file, 29, 0, 514);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

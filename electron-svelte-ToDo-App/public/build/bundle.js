@@ -1689,13 +1689,13 @@ var app = (function () {
     			button3 = element("button");
     			button3.textContent = "Clear Completed";
     			attr_dev(h1, "class", "svelte-1krwavc");
-    			add_location(h1, file$1, 110, 8, 3982);
+    			add_location(h1, file$1, 110, 8, 3985);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "todo-input svelte-1krwavc");
-    			attr_dev(input0, "placeholder", "click your to-do here, select a date, and hit enter...");
-    			add_location(input0, file$1, 111, 8, 4010);
+    			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
+    			add_location(input0, file$1, 111, 8, 4013);
     			attr_dev(div0, "class", "container svelte-1krwavc");
-    			add_location(div0, file$1, 108, 4, 3945);
+    			add_location(div0, file$1, 108, 4, 3948);
     			attr_dev(input1, "class", "inner-container-input svelte-1krwavc");
     			attr_dev(input1, "type", "checkbox");
     			add_location(input1, file$1, 126, 24, 4858);
@@ -1721,7 +1721,7 @@ var app = (function () {
     			attr_dev(div6, "class", "inner-container svelte-1krwavc");
     			add_location(div6, file$1, 129, 8, 5035);
     			attr_dev(main, "class", "svelte-1krwavc");
-    			add_location(main, file$1, 106, 0, 3933);
+    			add_location(main, file$1, 106, 0, 3936);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1884,17 +1884,17 @@ var app = (function () {
     	let todos = [
     		{
     			id: 1,
-    			title: "My first to-do" + "Start Date" + now,
+    			title: "My first to-do" + "Target Date" + now,
     			completed: false
     		},
     		{
     			id: 2,
-    			title: "My second to-do" + "Start Date" + now,
+    			title: "My second to-do" + "Target Date" + now,
     			completed: false
     		},
     		{
     			id: 3,
-    			title: "My third to-do" + "Start Date" + now,
+    			title: "My third to-do" + "Target Date" + now,
     			completed: false
     		}
     	];

@@ -42,17 +42,17 @@
     let todos = [
         {
             id: 1,
-            title: 'My first to-do'+'Start Date'+ now,
+            title: 'My first to-do'+'Target Date'+ now,
             completed: false,
         },
         {
             id: 2,
-            title: 'My second to-do'+'Start Date'+ now,
+            title: 'My second to-do'+'Target Date'+ now,
             completed: false,
         },
         {
             id: 3,
-            title: 'My third to-do'+'Start Date'+ now,
+            title: 'My third to-do'+'Target Date'+ now,
             completed: false,
         }
     ];
@@ -109,7 +109,7 @@
     <div class="container">
     
         <h1>my to-dos </h1>
-        <input type="text" class="todo-input" placeholder="click your to-do here, select a date, and hit enter..." bind:value={newTodoTitle} on:keydown={addTodo}>
+        <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={addTodo}>
             <!--Concatenating of 2 strings
             $: value3 = value1 + value2
             then just write {value3} in your page-->

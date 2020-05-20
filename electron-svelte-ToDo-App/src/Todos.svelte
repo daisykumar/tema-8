@@ -13,43 +13,47 @@
         //element of array one by one. Instead of iterating the todos, iterate through the filtered todos 
         //so that the user is able to filter the items. Only those items are filtered that are 
         //corresponding to the filtered settings. So, here, if we are setting the filter for completed 
-        //elements, we need to make sure that only the completed elements that has boolean prop trut get 
+        //elements, we need to make sure that only the completed elements that has boolean prop true get 
         //outputted. So, if I just used 'todos' I won't be able to filter the example completed items. 
         //The reason why I’ve opted to use the spread operator to construct a new array instead of using 
         //todoItem.push(todo) for example is because svelte only updates the dom on assignments.
 
 
     import TodoItems from './TodoItems.svelte';
+
       // optional import focus-visible polyfill only once
     import 'focus-visible';
+
     // import any components
-    import { Button, Checkbox, Datepicker } from 'svelte-mui';
+    import { Button, Checkbox, Datefield } from 'svelte-mui';
     
-
     let checked = true;
-
     let newTodoTitle = '';
     let currentFilter = 'all';
     let nextId = 4;
 
 	let show = false;
-	let count = 1;
+    let count = 1;
+
+    let toDoItemDate;
+    let now = new Date().getDate()+'-'+(new Date().getMonth()+1)+'-'+new Date().getFullYear();
+
 
     let todos = [
         {
             id: 1,
-            title: 'My first todo',
-            completed: false
+            title: 'My first to-do'+'Start Date'+ now,
+            completed: false,
         },
         {
             id: 2,
-            title: 'My second todo',
-            completed: false
+            title: 'My second to-do'+'Start Date'+ now,
+            completed: false,
         },
         {
             id: 3,
-            title: 'My third todo',
-            completed: false
+            title: 'My third to-do'+'Start Date'+ now,
+            completed: false,
         }
     ];
    
@@ -58,11 +62,11 @@
             todos = [...todos, {
                 id: nextId,
                 completed: false,
-                title: newTodoTitle,
-                date: toDoItemDate
+                title: newTodoTitle + toDoItemDate,
             }];
             nextId = nextId + 1;
             newTodoTitle = '';
+            toDoItemDate = '';
         }
     }
     $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
@@ -92,11 +96,12 @@
         ];
     }
 
-//Calendar
-    let toDoItemDate 
-    const selectDate = detail=>{
-        toDoItemDate = detail.detail
-    }
+//Calendar function
+     
+    //const selectDate = detail => {
+        //toDoItemDate = detail.detail
+    //}
+
 </script>
 
 <main>
@@ -104,14 +109,14 @@
     <div class="container">
     
         <h1>my to-dos </h1>
-        <input type="text" class="todo-input" placeholder="click your to-do here, and hit enter" bind:value={newTodoTitle} on:keydown={addTodo} >
-    
-    <br>
-    <Checkbox bind:checked>Pick Date</Checkbox>
-    {#if checked}
-        <Datepicker on:select={selectDate}> </Datepicker>
-    {/if}
-    <br>
+        <input type="text" class="todo-input" placeholder="click your to-do here, select a date, and hit enter..." bind:value={newTodoTitle} on:keydown={addTodo}>
+            <!--Concatenating of 2 strings
+            $: value3 = value1 + value2
+            then just write {value3} in your page-->
+            <!--Checkbox bind:checked>Pick a Date</!--Checkbox>
+            {#if checked}
+            <!--Datepicker icon=true on:select={newtoDoItemDate}> </Datepicker-->
+        <Datefield icon=false bind:value={toDoItemDate}></Datefield>
     </div>
         {#each filteredTodos as todo}
             <div class="todo-item">

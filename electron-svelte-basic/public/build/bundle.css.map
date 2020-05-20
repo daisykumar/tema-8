@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport { time } from './stores.js'\n\n\tlet alarm = new Date()\n\n\tconst formatter = new Intl.DateTimeFormat('en', {\n\t\thour12: true,\n\t\thour: 'numeric',\n\t\tminute: '2-digit',\n\t\tsecond: '2-digit'\n\t})\n\n\tlet kanjegfaais = true\n\tlet visbeskjed = false\n\t$: beskjed = kanjegfaais ? 'Ja, du kan få is' : 'Nei, og nå må du vente endda lengere'\n\t\n\t$: kanjegfaais = alarm < $time ? true : false\n\n\tlet foreldreKontroll = 30\n\n\tconst faaIs = (event) => {\n\n\t\tvisbeskjed = true\n\t\t\n\t\tif(kanjegfaais){\n\t\t\tevent.target.src = './assets/flag.webp'\n\t\t}else{\n\t\t\tevent.target.src = './assets/barn.webp'\n\t\t}\n\t\t\n\t\tsetTimeout(()=>{\n\t\t\tevent.target.src = './assets/is.png'\n\t\t\tvisbeskjed = false\n\t\t\talarm = new Date(new Date().getTime() + foreldreKontroll * 60000)\n\t\t}, 5000)\n\t}\n\n</script>\n\n<main>\n\t<img src='./assets/is.png' alt='iskrem' on:click={faaIs}/>\n\t{#if visbeskjed}\n\t\t<h1>{beskjed}</h1>\n\t{/if}\n</main>\n\n<style>\n\t:global(*){\n\t\tbox-sizing:border-box;\n\t}\n\tmain {\n\t\tdisplay:grid;\n\t\tplace-items:center;\n\t\tpadding:10vw;\n\t\tposition:relative;\n\t\theight:100vh;\n\t}\n\timg{\n\t\theight:100%;\n\t}\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t\tposition:absolute;\n\t\tbottom:4rem;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AA+CS,CAAC,AAAC,CAAC,AACV,WAAW,UAAU,AACtB,CAAC,AACD,IAAI,cAAC,CAAC,AACL,QAAQ,IAAI,CACZ,YAAY,MAAM,CAClB,QAAQ,IAAI,CACZ,SAAS,QAAQ,CACjB,OAAO,KAAK,AACb,CAAC,AACD,iBAAG,CAAC,AACH,OAAO,IAAI,AACZ,CAAC,AACD,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,CAChB,SAAS,QAAQ,CACjB,OAAO,IAAI,AACZ,CAAC"
+}

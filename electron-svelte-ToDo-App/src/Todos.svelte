@@ -20,7 +20,6 @@
 
 
     import TodoItems from './TodoItems.svelte';
-    
   
 
     let newTodoTitle = '';
@@ -48,6 +47,7 @@
         }
     ];
     //Code for Calendar here
+    //import { Button } from 'svelte-mui/src';
 
 
     function addTodo(event) {
@@ -96,8 +96,9 @@
     
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="e.g. Build an app..." bind:value={newTodoTitle} on:keydown={addTodo} >
-
-
+    <br>
+    
+    <br>
     </div>
         {#each filteredTodos as todo}
             <div class="todo-item">

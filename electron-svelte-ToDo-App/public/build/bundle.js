@@ -890,7 +890,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (102:8) {#each filteredTodos as todo}
+    // (103:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -910,7 +910,7 @@ var app = (function () {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
     			attr_dev(div, "class", "todo-item svelte-1krwavc");
-    			add_location(div, file$1, 102, 12, 3683);
+    			add_location(div, file$1, 103, 12, 3746);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -943,7 +943,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(102:8) {#each filteredTodos as todo}",
+    		source: "(103:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -957,26 +957,30 @@ var app = (function () {
     	let t1;
     	let input0;
     	let t2;
+    	let br0;
     	let t3;
+    	let br1;
+    	let t4;
+    	let t5;
     	let div3;
     	let div1;
     	let label;
     	let input1;
-    	let t4;
-    	let t5;
-    	let div2;
     	let t6;
     	let t7;
+    	let div2;
     	let t8;
+    	let t9;
+    	let t10;
     	let div6;
     	let div4;
     	let button0;
     	let strong;
-    	let t10;
-    	let button1;
     	let t12;
-    	let button2;
+    	let button1;
     	let t14;
+    	let button2;
+    	let t16;
     	let div5;
     	let button3;
     	let current;
@@ -1002,71 +1006,77 @@ var app = (function () {
     			t1 = space();
     			input0 = element("input");
     			t2 = space();
+    			br0 = element("br");
+    			t3 = space();
+    			br1 = element("br");
+    			t4 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t3 = space();
+    			t5 = space();
     			div3 = element("div");
     			div1 = element("div");
     			label = element("label");
     			input1 = element("input");
-    			t4 = text("Check All");
-    			t5 = space();
+    			t6 = text("Check All");
+    			t7 = space();
     			div2 = element("div");
-    			t6 = text(/*todosRemaining*/ ctx[2]);
-    			t7 = text(" Items Left");
-    			t8 = space();
+    			t8 = text(/*todosRemaining*/ ctx[2]);
+    			t9 = text(" Items Left");
+    			t10 = space();
     			div6 = element("div");
     			div4 = element("div");
     			button0 = element("button");
     			strong = element("strong");
     			strong.textContent = "All";
-    			t10 = space();
+    			t12 = space();
     			button1 = element("button");
     			button1.textContent = "Active";
-    			t12 = space();
+    			t14 = space();
     			button2 = element("button");
     			button2.textContent = "Completed";
-    			t14 = space();
+    			t16 = space();
     			div5 = element("div");
     			button3 = element("button");
     			button3.textContent = "Clear Completed";
     			attr_dev(h1, "class", "svelte-1krwavc");
-    			add_location(h1, file$1, 96, 8, 3470);
+    			add_location(h1, file$1, 96, 8, 3512);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "todo-input svelte-1krwavc");
     			attr_dev(input0, "placeholder", "e.g. Build an app...");
-    			add_location(input0, file$1, 97, 8, 3498);
+    			add_location(input0, file$1, 97, 8, 3540);
+    			add_location(br0, file$1, 98, 4, 3666);
+    			add_location(br1, file$1, 100, 4, 3680);
     			attr_dev(div0, "class", "container svelte-1krwavc");
-    			add_location(div0, file$1, 94, 4, 3433);
+    			add_location(div0, file$1, 94, 4, 3475);
     			attr_dev(input1, "class", "inner-container-input svelte-1krwavc");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 107, 24, 3918);
-    			add_location(label, file$1, 107, 17, 3911);
-    			add_location(div1, file$1, 107, 12, 3906);
-    			add_location(div2, file$1, 108, 12, 4033);
+    			add_location(input1, file$1, 108, 24, 3981);
+    			add_location(label, file$1, 108, 17, 3974);
+    			add_location(div1, file$1, 108, 12, 3969);
+    			add_location(div2, file$1, 109, 12, 4096);
     			attr_dev(div3, "class", "inner-container svelte-1krwavc");
-    			add_location(div3, file$1, 106, 8, 3864);
-    			add_location(strong, file$1, 112, 102, 4245);
+    			add_location(div3, file$1, 107, 8, 3927);
+    			add_location(strong, file$1, 113, 102, 4308);
     			attr_dev(button0, "class", "svelte-1krwavc");
     			toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button0, file$1, 112, 16, 4159);
+    			add_location(button0, file$1, 113, 16, 4222);
     			attr_dev(button1, "class", "svelte-1krwavc");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button1, file$1, 113, 16, 4291);
+    			add_location(button1, file$1, 114, 16, 4354);
     			attr_dev(button2, "class", "svelte-1krwavc");
     			toggle_class(button2, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button2, file$1, 114, 16, 4415);
-    			add_location(div4, file$1, 111, 12, 4137);
+    			add_location(button2, file$1, 115, 16, 4478);
+    			add_location(div4, file$1, 112, 12, 4200);
     			attr_dev(button3, "class", "svelte-1krwavc");
-    			add_location(button3, file$1, 117, 16, 4588);
-    			add_location(div5, file$1, 116, 12, 4566);
+    			add_location(button3, file$1, 118, 16, 4651);
+    			add_location(div5, file$1, 117, 12, 4629);
     			attr_dev(div6, "class", "inner-container svelte-1krwavc");
-    			add_location(div6, file$1, 110, 8, 4095);
+    			add_location(div6, file$1, 111, 8, 4158);
     			attr_dev(main, "class", "svelte-1krwavc");
-    			add_location(main, file$1, 92, 0, 3421);
+    			add_location(main, file$1, 92, 0, 3463);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1078,32 +1088,36 @@ var app = (function () {
     			append_dev(div0, t1);
     			append_dev(div0, input0);
     			set_input_value(input0, /*newTodoTitle*/ ctx[0]);
-    			append_dev(main, t2);
+    			append_dev(div0, t2);
+    			append_dev(div0, br0);
+    			append_dev(div0, t3);
+    			append_dev(div0, br1);
+    			append_dev(main, t4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(main, null);
     			}
 
-    			append_dev(main, t3);
+    			append_dev(main, t5);
     			append_dev(main, div3);
     			append_dev(div3, div1);
     			append_dev(div1, label);
     			append_dev(label, input1);
-    			append_dev(label, t4);
-    			append_dev(div3, t5);
+    			append_dev(label, t6);
+    			append_dev(div3, t7);
     			append_dev(div3, div2);
-    			append_dev(div2, t6);
-    			append_dev(div2, t7);
-    			append_dev(main, t8);
+    			append_dev(div2, t8);
+    			append_dev(div2, t9);
+    			append_dev(main, t10);
     			append_dev(main, div6);
     			append_dev(div6, div4);
     			append_dev(div4, button0);
     			append_dev(button0, strong);
-    			append_dev(div4, t10);
-    			append_dev(div4, button1);
     			append_dev(div4, t12);
+    			append_dev(div4, button1);
+    			append_dev(div4, t14);
     			append_dev(div4, button2);
-    			append_dev(div6, t14);
+    			append_dev(div6, t16);
     			append_dev(div6, div5);
     			append_dev(div5, button3);
     			current = true;
@@ -1138,7 +1152,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(main, t3);
+    						each_blocks[i].m(main, t5);
     					}
     				}
 
@@ -1151,7 +1165,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*todosRemaining*/ 4) set_data_dev(t6, /*todosRemaining*/ ctx[2]);
+    			if (!current || dirty & /*todosRemaining*/ 4) set_data_dev(t8, /*todosRemaining*/ ctx[2]);
 
     			if (dirty & /*currentFilter*/ 2) {
     				toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
@@ -1227,6 +1241,7 @@ var app = (function () {
     	];
 
     	//Code for Calendar here
+    	//import { Button } from 'svelte-mui/src';
     	function addTodo(event) {
     		if (event.key === "Enter") {
     			$$invalidate(11, todos = [

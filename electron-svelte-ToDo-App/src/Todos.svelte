@@ -20,7 +20,13 @@
 
 
     import TodoItems from './TodoItems.svelte';
-  
+      // optional import focus-visible polyfill only once
+    import 'focus-visible';
+    // import any components
+    import { Button, Checkbox, Datepicker } from 'svelte-mui';
+    
+
+    let checked = true;
 
     let newTodoTitle = '';
     let currentFilter = 'all';
@@ -46,16 +52,14 @@
             completed: false
         }
     ];
-    //Code for Calendar here
-    //import { Button } from 'svelte-mui/src';
-
-
+   
     function addTodo(event) {
         if (event.key === 'Enter') {
             todos = [...todos, {
                 id: nextId,
                 completed: false,
-                title: newTodoTitle
+                title: newTodoTitle,
+                date: toDoItemDate
             }];
             nextId = nextId + 1;
             newTodoTitle = '';
@@ -88,6 +92,11 @@
         ];
     }
 
+//Calendar
+    let toDoItemDate 
+    const selectDate = detail=>{
+        toDoItemDate = detail.detail
+    }
 </script>
 
 <main>
@@ -95,9 +104,13 @@
     <div class="container">
     
         <h1>my to-dos </h1>
-        <input type="text" class="todo-input" placeholder="e.g. Build an app..." bind:value={newTodoTitle} on:keydown={addTodo} >
-    <br>
+        <input type="text" class="todo-input" placeholder="click your to-do here, and hit enter" bind:value={newTodoTitle} on:keydown={addTodo} >
     
+    <br>
+    <Checkbox bind:checked>Pick Date</Checkbox>
+    {#if checked}
+        <Datepicker on:select={selectDate}> </Datepicker>
+    {/if}
     <br>
     </div>
         {#each filteredTodos as todo}

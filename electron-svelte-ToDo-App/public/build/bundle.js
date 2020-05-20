@@ -1548,7 +1548,7 @@ var app = (function () {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
     			attr_dev(div, "class", "todo-item svelte-1krwavc");
-    			add_location(div, file$1, 121, 12, 4603);
+    			add_location(div, file$1, 121, 12, 4623);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1626,7 +1626,7 @@ var app = (function () {
     		/*datefield_value_binding*/ ctx[18].call(null, value);
     	}
 
-    	let datefield_props = { icon: "false" };
+    	let datefield_props = { format: "DD-MM-YYYY", icon: "false" };
 
     	if (/*toDoItemDate*/ ctx[2] !== void 0) {
     		datefield_props.value = /*toDoItemDate*/ ctx[2];
@@ -1698,28 +1698,28 @@ var app = (function () {
     			add_location(div0, file$1, 108, 4, 3945);
     			attr_dev(input1, "class", "inner-container-input svelte-1krwavc");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 126, 24, 4838);
-    			add_location(label, file$1, 126, 17, 4831);
-    			add_location(div1, file$1, 126, 12, 4826);
-    			add_location(div2, file$1, 127, 12, 4953);
+    			add_location(input1, file$1, 126, 24, 4858);
+    			add_location(label, file$1, 126, 17, 4851);
+    			add_location(div1, file$1, 126, 12, 4846);
+    			add_location(div2, file$1, 127, 12, 4973);
     			attr_dev(div3, "class", "inner-container svelte-1krwavc");
-    			add_location(div3, file$1, 125, 8, 4784);
-    			add_location(strong, file$1, 131, 102, 5165);
+    			add_location(div3, file$1, 125, 8, 4804);
+    			add_location(strong, file$1, 131, 102, 5185);
     			attr_dev(button0, "class", "svelte-1krwavc");
     			toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button0, file$1, 131, 16, 5079);
+    			add_location(button0, file$1, 131, 16, 5099);
     			attr_dev(button1, "class", "svelte-1krwavc");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button1, file$1, 132, 16, 5211);
+    			add_location(button1, file$1, 132, 16, 5231);
     			attr_dev(button2, "class", "svelte-1krwavc");
     			toggle_class(button2, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button2, file$1, 133, 16, 5335);
-    			add_location(div4, file$1, 130, 12, 5057);
+    			add_location(button2, file$1, 133, 16, 5355);
+    			add_location(div4, file$1, 130, 12, 5077);
     			attr_dev(button3, "class", "svelte-1krwavc");
-    			add_location(button3, file$1, 136, 16, 5508);
-    			add_location(div5, file$1, 135, 12, 5486);
+    			add_location(button3, file$1, 136, 16, 5528);
+    			add_location(div5, file$1, 135, 12, 5506);
     			attr_dev(div6, "class", "inner-container svelte-1krwavc");
-    			add_location(div6, file$1, 129, 8, 5015);
+    			add_location(div6, file$1, 129, 8, 5035);
     			attr_dev(main, "class", "svelte-1krwavc");
     			add_location(main, file$1, 106, 0, 3933);
     		},

@@ -116,7 +116,7 @@
             <!--Checkbox bind:checked>Pick a Date</!--Checkbox>
             {#if checked}
             <!--Datepicker icon=true on:select={newtoDoItemDate}> </Datepicker-->
-        <Datefield icon=false bind:value={toDoItemDate}></Datefield>
+        <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
     </div>
         {#each filteredTodos as todo}
             <div class="todo-item">

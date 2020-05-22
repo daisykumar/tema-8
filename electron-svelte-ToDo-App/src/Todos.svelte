@@ -38,7 +38,6 @@
     let toDoItemDate;
     let now = new Date().getDate()+'-'+(new Date().getMonth()+1)+'-'+new Date().getFullYear();
 
-
     let todos = [
         {
             id: 1,
@@ -106,6 +105,7 @@
         //toDoItemDate = detail.detail
     //}
 
+
 </script>
 
 <main>
@@ -170,9 +170,7 @@
         align-items: left;
         justify-content: space-between;
         margin-top: 0px;
-        color: #AD47FF;
     }
-
 
     .todo-input {
         width: 100%;

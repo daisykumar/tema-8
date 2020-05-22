@@ -1,5 +1,4 @@
 <script>
-    //This is the child component that handles single to-do items
     import { createEventDispatcher } from 'svelte';
     import { fly } from 'svelte/transition';
     

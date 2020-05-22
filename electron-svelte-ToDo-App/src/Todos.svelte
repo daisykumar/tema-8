@@ -1,25 +1,43 @@
 <script>
+    //This is todos component that will output the to-do list and will output the input field 
+        //for adding 'new todos' and will make use of the custom child component which is named as 
+        //'toDoItem.svelte' Component.
+  
+   //In the markup, structure is- the user will use the input to enter new items. In the input, 
+        //we've prepared a variable called 'newTodoTitle'. Bind that variable with 'bind:value'. Then 
+        //attach the event handler with the keydown element so that once the user hits the enter key. 
+        //With 'on:keydown'. Assign the value to 'addTodo'.
+  
+   //Next is to show the output by running the list of todos which is visible in the array with 
+        //{each} block. Thats the way to iterate through the elements of array or means accessing each 
+        //element of array one by one. Instead of iterating the todos, iterate through the filtered todos 
+        //so that the user is able to filter the items. Only those items are filtered that are 
+        //corresponding to the filtered settings. So, here, if we are setting the filter for completed 
+        //elements, we need to make sure that only the completed elements that has boolean prop true get 
+        //outputted. So, if I just used 'todos' I won't be able to filter the example completed items. 
+        //The reason why I’ve opted to use the spread operator to construct a new array instead of using 
+        //todoItem.push(todo) for example is because svelte only updates the dom on assignments.
+
 
     import TodoItems from './TodoItems.svelte';
 
     // optional import focus-visible polyfill only once
     import 'focus-visible';
-    // import Calendar Components
+
+    // import any components
     import { Button, Checkbox, Datefield } from 'svelte-mui';
     
     let checked = true;
+    let newTodoTitle = '';
     let currentFilter = 'all';
     let nextId = 4;
 
 	let show = false;
     let count = 1;
 
-    //Date
     let toDoItemDate;
     let now = new Date().getDate()+'-'+(new Date().getMonth()+1)+'-'+new Date().getFullYear();
-    let newTodoTitle = '';
 
-    //Todo Arrays
     let todos = [
         {
             id: 1,
@@ -41,7 +59,6 @@
         }
     ];
 
-    //Function of addTodos by the user
     function addTodo() {
             todos = [...todos, {
                 id: nextId,
@@ -81,7 +98,7 @@
         ];
     }
 
-//Function of Button 'ENTER' 
+//For Button 'ENTER' 
 
 function submit(event) {
   if (event.key === 'Enter') {
@@ -101,9 +118,9 @@ function submit(event) {
             <div class="date">
                 <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
             </div> 
-            <div class="enterButton">
-                <button on:click="{addTodo}">Enter</button>
-            </div>
+        
+        <button class="enterButton" on:click="{addTodo}">Enter</button>
+    
         </div>
         {#each filteredTodos as todo}
             <div class="todo-item">
@@ -133,8 +150,8 @@ function submit(event) {
     }
     .container {
         max-width: 800px;
+        /* margin: 20px auto; */
     }
-    
     h1{
         font-size: 100px;
         color: #AD47FF;
@@ -149,12 +166,26 @@ function submit(event) {
         width:200px;
         height:50px;
         margin-right: 50px;
+        /*display: flex;
+        align-items: left;
+        justify-content: space-between;
+        margin-top: 0px;*/
     }
 
     .enterButton{
         display: inline-block;
-        width:200px;
-        height:50px;
+        width:100px;
+        height:40px;
+        background-color: lightseagreen;
+        font: 10px;
+        letter-spacing: 1.25px;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 5px;
+    }
+
+    .enterButton:hover{
+        background-color: rgb(31, 161, 155);
     }
 
     .todo-input {
@@ -184,14 +215,14 @@ function submit(event) {
     button {
         font-size: 18px;
         background-color: rgb(230, 225, 235);
-        border-radius: 9px;
+        border-radius: 5px;
         appearance: none;
         border: none;
     }
     button:hover {
         background: lightseagreen;
     }
-    button:focus {
+    button:focus, .enterButton:focus {
         outline: none;
     }
     .active, .completed {

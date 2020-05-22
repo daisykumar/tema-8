@@ -58,9 +58,8 @@
             completed: false,
         }
     ];
-   
-    function addTodo(event) {
-        if (event.key === 'Enter') {
+
+    function addTodo() {
             todos = [...todos, {
                 id: nextId,
                 completed: false,
@@ -70,8 +69,8 @@
             nextId = nextId + 1;
             newTodoTitle = '';
             toDoItemDate = '';
-        }
     }
+
     $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
     $: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed'
         ? todos.filter(todo => todo.completed)
@@ -99,12 +98,13 @@
         ];
     }
 
-//Calendar function
-     
-    //const selectDate = detail => {
-        //toDoItemDate = detail.detail
-    //}
+//Fo Button 'ENTER' 
 
+function submit(event) {
+  if (event.key === 'Enter') {
+    addTodo();
+  }
+}
 
 </script>
 
@@ -112,22 +112,14 @@
 
     <div class="container">
         <h1>my to-dos </h1>
-        <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={addTodo}>
-            <!--Concatenating of 2 strings
-            $: value3 = value1 + value2
-            then just write {value3} in your page-->
-            <!--Checkbox bind:checked>Pick a Date</!--Checkbox>
-            {#if checked}
-            <!--Datepicker icon=true on:select={newtoDoItemDate}> </Datepicker-->
+        <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
+
         <div class="date">
             <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
         </div> 
-        
-        <div class="buttonDate">
-            <button on:click={newTodoTitle}>Enter</button>
+        <div class="enterButton">
+            <button on:click="{addTodo}">Enter</button>
         </div>
-
-        
         {#each filteredTodos as todo}
             <div class="todo-item">
                 <TodoItems {...todo} on:deleteTodo={handleDeleteTodo} on:toggleComplete={handleToggleComplete} />
@@ -172,6 +164,11 @@
         align-items: left;
         justify-content: space-between;
         margin-top: 0px;
+    }
+
+    .enterButton{
+        display: flex;
+        align-items: right;
     }
 
     .todo-input {

@@ -49,9 +49,14 @@
     }
     .remove-item {
         cursor: pointer;
-        margin-left: 15px;
     }
 
+    .todo-item-left {
+        display: grid;
+        grid-template-columns: 1fr 3fr 3fr;
+        justify-items: start;
+        width: 100%;
+    }
     .remove-item:hover {
         color: lightseagreen; 
     }

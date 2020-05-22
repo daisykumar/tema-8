@@ -121,11 +121,13 @@
             <!--Datepicker icon=true on:select={newtoDoItemDate}> </Datepicker-->
         <div class="date">
             <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
-        </div>
-
+        </div> 
+        
         <div class="buttonDate">
             <button on:click={newTodoTitle}>Enter</button>
         </div>
+
+        
         {#each filteredTodos as todo}
             <div class="todo-item">
                 <TodoItems {...todo} on:deleteTodo={handleDeleteTodo} on:toggleComplete={handleToggleComplete} />

@@ -1011,17 +1011,17 @@ var app = (function () {
     			div3.textContent = "x";
     			attr_dev(input, "type", "checkbox");
     			add_location(input, file, 30, 8, 656);
-    			attr_dev(div0, "class", "todo-item-label box1 svelte-1h3rd0b");
+    			attr_dev(div0, "class", "todo-item-label box1 svelte-1wcth6p");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
     			add_location(div0, file, 31, 8, 740);
-    			attr_dev(div1, "class", "todo-item-label box2 svelte-1h3rd0b");
+    			attr_dev(div1, "class", "todo-item-label box2 svelte-1wcth6p");
     			toggle_class(div1, "completed", /*completed*/ ctx[0]);
     			add_location(div1, file, 32, 8, 824);
-    			attr_dev(div2, "class", "todo-item-left svelte-1h3rd0b");
+    			attr_dev(div2, "class", "todo-item-left svelte-1wcth6p");
     			add_location(div2, file, 29, 8, 575);
-    			attr_dev(div3, "class", "remove-item svelte-1h3rd0b");
+    			attr_dev(div3, "class", "remove-item svelte-1wcth6p");
     			add_location(div3, file, 35, 4, 915);
-    			attr_dev(div4, "class", "todo-item svelte-1h3rd0b");
+    			attr_dev(div4, "class", "todo-item svelte-1wcth6p");
     			add_location(div4, file, 28, 4, 543);
     			add_location(main, file, 27, 0, 532);
     		},
@@ -1563,7 +1563,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (129:8) {#each filteredTodos as todo}
+    // (131:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -1583,7 +1583,7 @@ var app = (function () {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
     			attr_dev(div, "class", "todo-item svelte-11dqqgd");
-    			add_location(div, file$1, 129, 12, 4792);
+    			add_location(div, file$1, 131, 12, 4811);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1616,7 +1616,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(129:8) {#each filteredTodos as todo}",
+    		source: "(131:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1741,33 +1741,33 @@ var app = (function () {
     			attr_dev(div0, "class", "date svelte-11dqqgd");
     			add_location(div0, file$1, 121, 8, 4507);
     			attr_dev(button0, "class", "svelte-11dqqgd");
-    			add_location(button0, file$1, 126, 12, 4680);
+    			add_location(button0, file$1, 126, 12, 4689);
     			attr_dev(div1, "class", "buttonDate");
-    			add_location(div1, file$1, 125, 8, 4643);
+    			add_location(div1, file$1, 125, 8, 4652);
     			attr_dev(input1, "class", "inner-container-input svelte-11dqqgd");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 134, 24, 5027);
-    			add_location(label, file$1, 134, 17, 5020);
-    			add_location(div2, file$1, 134, 12, 5015);
-    			add_location(div3, file$1, 135, 12, 5142);
+    			add_location(input1, file$1, 136, 24, 5046);
+    			add_location(label, file$1, 136, 17, 5039);
+    			add_location(div2, file$1, 136, 12, 5034);
+    			add_location(div3, file$1, 137, 12, 5161);
     			attr_dev(div4, "class", "inner-container svelte-11dqqgd");
-    			add_location(div4, file$1, 133, 8, 4973);
-    			add_location(strong, file$1, 139, 102, 5354);
+    			add_location(div4, file$1, 135, 8, 4992);
+    			add_location(strong, file$1, 141, 102, 5373);
     			attr_dev(button1, "class", "svelte-11dqqgd");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button1, file$1, 139, 16, 5268);
+    			add_location(button1, file$1, 141, 16, 5287);
     			attr_dev(button2, "class", "svelte-11dqqgd");
     			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button2, file$1, 140, 16, 5400);
+    			add_location(button2, file$1, 142, 16, 5419);
     			attr_dev(button3, "class", "svelte-11dqqgd");
     			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button3, file$1, 141, 16, 5524);
-    			add_location(div5, file$1, 138, 12, 5246);
+    			add_location(button3, file$1, 143, 16, 5543);
+    			add_location(div5, file$1, 140, 12, 5265);
     			attr_dev(button4, "class", "svelte-11dqqgd");
-    			add_location(button4, file$1, 144, 16, 5697);
-    			add_location(div6, file$1, 143, 12, 5675);
+    			add_location(button4, file$1, 146, 16, 5716);
+    			add_location(div6, file$1, 145, 12, 5694);
     			attr_dev(div7, "class", "inner-container svelte-11dqqgd");
-    			add_location(div7, file$1, 137, 8, 5204);
+    			add_location(div7, file$1, 139, 8, 5223);
     			attr_dev(div8, "class", "container svelte-11dqqgd");
     			add_location(div8, file$1, 112, 4, 3979);
     			attr_dev(main, "class", "svelte-11dqqgd");

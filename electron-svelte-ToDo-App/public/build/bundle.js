@@ -1563,7 +1563,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (123:8) {#each filteredTodos as todo}
+    // (125:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -1582,8 +1582,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
-    			attr_dev(div, "class", "todo-item svelte-12ca3ju");
-    			add_location(div, file$1, 123, 12, 4416);
+    			attr_dev(div, "class", "todo-item svelte-1ssjrzo");
+    			add_location(div, file$1, 125, 12, 4486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1616,7 +1616,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(123:8) {#each filteredTodos as todo}",
+    		source: "(125:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1625,11 +1625,12 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let main;
-    	let div8;
+    	let div9;
     	let h1;
     	let t1;
     	let input0;
     	let t2;
+    	let div2;
     	let div0;
     	let updating_value;
     	let t3;
@@ -1637,18 +1638,18 @@ var app = (function () {
     	let button0;
     	let t5;
     	let t6;
-    	let div4;
-    	let div2;
+    	let div5;
+    	let div3;
     	let label;
     	let input1;
     	let t7;
     	let t8;
-    	let div3;
+    	let div4;
     	let t9;
     	let t10;
     	let t11;
-    	let div7;
-    	let div5;
+    	let div8;
+    	let div6;
     	let button1;
     	let strong;
     	let t13;
@@ -1656,7 +1657,7 @@ var app = (function () {
     	let t15;
     	let button3;
     	let t17;
-    	let div6;
+    	let div7;
     	let button4;
     	let current;
     	let dispose;
@@ -1688,12 +1689,13 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div8 = element("div");
+    			div9 = element("div");
     			h1 = element("h1");
     			h1.textContent = "my to-dos";
     			t1 = space();
     			input0 = element("input");
     			t2 = space();
+    			div2 = element("div");
     			div0 = element("div");
     			create_component(datefield.$$.fragment);
     			t3 = space();
@@ -1707,18 +1709,18 @@ var app = (function () {
     			}
 
     			t6 = space();
-    			div4 = element("div");
-    			div2 = element("div");
+    			div5 = element("div");
+    			div3 = element("div");
     			label = element("label");
     			input1 = element("input");
     			t7 = text("Check All");
     			t8 = space();
-    			div3 = element("div");
+    			div4 = element("div");
     			t9 = text(/*todosRemaining*/ ctx[3]);
     			t10 = text(" Items Left");
     			t11 = space();
-    			div7 = element("div");
-    			div5 = element("div");
+    			div8 = element("div");
+    			div6 = element("div");
     			button1 = element("button");
     			strong = element("strong");
     			strong.textContent = "All";
@@ -1729,94 +1731,97 @@ var app = (function () {
     			button3 = element("button");
     			button3.textContent = "Completed";
     			t17 = space();
-    			div6 = element("div");
+    			div7 = element("div");
     			button4 = element("button");
     			button4.textContent = "Clear Completed";
-    			attr_dev(h1, "class", "svelte-12ca3ju");
-    			add_location(h1, file$1, 113, 8, 3945);
+    			attr_dev(h1, "class", "svelte-1ssjrzo");
+    			add_location(h1, file$1, 113, 8, 3946);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", "todo-input svelte-12ca3ju");
+    			attr_dev(input0, "class", "todo-input svelte-1ssjrzo");
     			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
-    			add_location(input0, file$1, 114, 8, 3973);
-    			attr_dev(div0, "class", "date svelte-12ca3ju");
-    			add_location(div0, file$1, 116, 8, 4133);
-    			attr_dev(button0, "class", "svelte-12ca3ju");
-    			add_location(button0, file$1, 120, 12, 4307);
-    			attr_dev(div1, "class", "enterButton svelte-12ca3ju");
-    			add_location(div1, file$1, 119, 8, 4269);
-    			attr_dev(input1, "class", "inner-container-input svelte-12ca3ju");
+    			add_location(input0, file$1, 114, 8, 3974);
+    			attr_dev(div0, "class", "date svelte-1ssjrzo");
+    			add_location(div0, file$1, 117, 12, 4168);
+    			attr_dev(button0, "class", "svelte-1ssjrzo");
+    			add_location(button0, file$1, 121, 16, 4358);
+    			attr_dev(div1, "class", "enterButton svelte-1ssjrzo");
+    			add_location(div1, file$1, 120, 12, 4316);
+    			attr_dev(div2, "class", "wrapper");
+    			add_location(div2, file$1, 116, 8, 4134);
+    			attr_dev(input1, "class", "inner-container-input svelte-1ssjrzo");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 128, 24, 4651);
-    			add_location(label, file$1, 128, 17, 4644);
-    			add_location(div2, file$1, 128, 12, 4639);
-    			add_location(div3, file$1, 129, 12, 4766);
-    			attr_dev(div4, "class", "inner-container svelte-12ca3ju");
-    			add_location(div4, file$1, 127, 8, 4597);
-    			add_location(strong, file$1, 133, 102, 4978);
-    			attr_dev(button1, "class", "svelte-12ca3ju");
+    			add_location(input1, file$1, 130, 24, 4721);
+    			add_location(label, file$1, 130, 17, 4714);
+    			add_location(div3, file$1, 130, 12, 4709);
+    			add_location(div4, file$1, 131, 12, 4836);
+    			attr_dev(div5, "class", "inner-container svelte-1ssjrzo");
+    			add_location(div5, file$1, 129, 8, 4667);
+    			add_location(strong, file$1, 135, 102, 5048);
+    			attr_dev(button1, "class", "svelte-1ssjrzo");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button1, file$1, 133, 16, 4892);
-    			attr_dev(button2, "class", "svelte-12ca3ju");
+    			add_location(button1, file$1, 135, 16, 4962);
+    			attr_dev(button2, "class", "svelte-1ssjrzo");
     			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button2, file$1, 134, 16, 5024);
-    			attr_dev(button3, "class", "svelte-12ca3ju");
+    			add_location(button2, file$1, 136, 16, 5094);
+    			attr_dev(button3, "class", "svelte-1ssjrzo");
     			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button3, file$1, 135, 16, 5148);
-    			add_location(div5, file$1, 132, 12, 4870);
-    			attr_dev(button4, "class", "svelte-12ca3ju");
-    			add_location(button4, file$1, 138, 16, 5321);
-    			add_location(div6, file$1, 137, 12, 5299);
-    			attr_dev(div7, "class", "inner-container svelte-12ca3ju");
-    			add_location(div7, file$1, 131, 8, 4828);
-    			attr_dev(div8, "class", "container svelte-12ca3ju");
-    			add_location(div8, file$1, 112, 4, 3913);
-    			attr_dev(main, "class", "svelte-12ca3ju");
-    			add_location(main, file$1, 110, 0, 3901);
+    			add_location(button3, file$1, 137, 16, 5218);
+    			add_location(div6, file$1, 134, 12, 4940);
+    			attr_dev(button4, "class", "svelte-1ssjrzo");
+    			add_location(button4, file$1, 140, 16, 5391);
+    			add_location(div7, file$1, 139, 12, 5369);
+    			attr_dev(div8, "class", "inner-container svelte-1ssjrzo");
+    			add_location(div8, file$1, 133, 8, 4898);
+    			attr_dev(div9, "class", "container svelte-1ssjrzo");
+    			add_location(div9, file$1, 112, 4, 3914);
+    			attr_dev(main, "class", "svelte-1ssjrzo");
+    			add_location(main, file$1, 110, 0, 3902);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div8);
-    			append_dev(div8, h1);
-    			append_dev(div8, t1);
-    			append_dev(div8, input0);
+    			append_dev(main, div9);
+    			append_dev(div9, h1);
+    			append_dev(div9, t1);
+    			append_dev(div9, input0);
     			set_input_value(input0, /*newTodoTitle*/ ctx[0]);
-    			append_dev(div8, t2);
-    			append_dev(div8, div0);
+    			append_dev(div9, t2);
+    			append_dev(div9, div2);
+    			append_dev(div2, div0);
     			mount_component(datefield, div0, null);
-    			append_dev(div8, t3);
-    			append_dev(div8, div1);
+    			append_dev(div2, t3);
+    			append_dev(div2, div1);
     			append_dev(div1, button0);
-    			append_dev(div8, t5);
+    			append_dev(div9, t5);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div8, null);
+    				each_blocks[i].m(div9, null);
     			}
 
-    			append_dev(div8, t6);
-    			append_dev(div8, div4);
-    			append_dev(div4, div2);
-    			append_dev(div2, label);
+    			append_dev(div9, t6);
+    			append_dev(div9, div5);
+    			append_dev(div5, div3);
+    			append_dev(div3, label);
     			append_dev(label, input1);
     			append_dev(label, t7);
-    			append_dev(div4, t8);
-    			append_dev(div4, div3);
-    			append_dev(div3, t9);
-    			append_dev(div3, t10);
-    			append_dev(div8, t11);
-    			append_dev(div8, div7);
-    			append_dev(div7, div5);
-    			append_dev(div5, button1);
+    			append_dev(div5, t8);
+    			append_dev(div5, div4);
+    			append_dev(div4, t9);
+    			append_dev(div4, t10);
+    			append_dev(div9, t11);
+    			append_dev(div9, div8);
+    			append_dev(div8, div6);
+    			append_dev(div6, button1);
     			append_dev(button1, strong);
-    			append_dev(div5, t13);
-    			append_dev(div5, button2);
-    			append_dev(div5, t15);
-    			append_dev(div5, button3);
-    			append_dev(div7, t17);
-    			append_dev(div7, div6);
-    			append_dev(div6, button4);
+    			append_dev(div6, t13);
+    			append_dev(div6, button2);
+    			append_dev(div6, t15);
+    			append_dev(div6, button3);
+    			append_dev(div8, t17);
+    			append_dev(div8, div7);
+    			append_dev(div7, button4);
     			current = true;
 
     			dispose = [
@@ -1860,7 +1865,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div8, t6);
+    						each_blocks[i].m(div9, t6);
     					}
     				}
 
@@ -2001,7 +2006,7 @@ var app = (function () {
     		$$invalidate(13, todos = [...todos.slice(0, todoIndex), updatedTodo, ...todos.slice(todoIndex + 1)]);
     	}
 
-    	//Fo Button 'ENTER' 
+    	//For Button 'ENTER' 
     	function submit(event) {
     		if (event.key === "Enter") {
     			addTodo();

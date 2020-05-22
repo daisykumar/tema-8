@@ -98,7 +98,7 @@
         ];
     }
 
-//Fo Button 'ENTER' 
+//For Button 'ENTER' 
 
 function submit(event) {
   if (event.key === 'Enter') {
@@ -114,11 +114,13 @@ function submit(event) {
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
 
-        <div class="date">
-            <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
-        </div> 
-        <div class="enterButton">
-            <button on:click="{addTodo}">Enter</button>
+        <div class="wrapper">
+            <div class="date">
+                <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
+            </div> 
+            <div class="enterButton">
+                <button on:click="{addTodo}">Enter</button>
+            </div>
         </div>
         {#each filteredTodos as todo}
             <div class="todo-item">
@@ -160,15 +162,21 @@ function submit(event) {
     }
 
     .date{
-        display: flex;
+        display: inline-block;
+        width:200px;
+        height:50px;
+        margin-right: 50px;
+        /*display: flex;
         align-items: left;
         justify-content: space-between;
-        margin-top: 0px;
+        margin-top: 0px;*/
     }
 
     .enterButton{
-        display: flex;
-        align-items: right;
+        display: inline-block;
+        width:200px;
+        height:50px;
+        /*display: flex; */
     }
 
     .todo-input {

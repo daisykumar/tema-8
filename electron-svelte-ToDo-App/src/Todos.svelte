@@ -21,7 +21,7 @@
 
     import TodoItems from './TodoItems.svelte';
 
-      // optional import focus-visible polyfill only once
+    // optional import focus-visible polyfill only once
     import 'focus-visible';
 
     // import any components
@@ -42,17 +42,20 @@
     let todos = [
         {
             id: 1,
-            title: 'My first to-do'+'Target Date'+ now,
+            title: 'My first to-do',
+            date: now,
             completed: false,
         },
         {
             id: 2,
-            title: 'My second to-do'+'Target Date'+ now,
+            title: 'My second to-do',
+            date: now,
             completed: false,
         },
         {
             id: 3,
-            title: 'My third to-do'+'Target Date'+ now,
+            title: 'My third to-do',
+            date: now,
             completed: false,
         }
     ];
@@ -62,7 +65,8 @@
             todos = [...todos, {
                 id: nextId,
                 completed: false,
-                title: newTodoTitle + toDoItemDate,
+                title: newTodoTitle,
+                date: toDoItemDate,
             }];
             nextId = nextId + 1;
             newTodoTitle = '';
@@ -107,7 +111,6 @@
 <main>
 
     <div class="container">
-    
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={addTodo}>
             <!--Concatenating of 2 strings
@@ -116,8 +119,13 @@
             <!--Checkbox bind:checked>Pick a Date</!--Checkbox>
             {#if checked}
             <!--Datepicker icon=true on:select={newtoDoItemDate}> </Datepicker-->
-        <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
-    </div>
+        <div class="date">
+            <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
+        </div>
+
+        <div class="buttonDate">
+            <button on:click={newTodoTitle}>Enter</button>
+        </div>
         {#each filteredTodos as todo}
             <div class="todo-item">
                 <TodoItems {...todo} on:deleteTodo={handleDeleteTodo} on:toggleComplete={handleToggleComplete} />
@@ -146,7 +154,7 @@
     }
     .container {
         max-width: 800px;
-        margin: 20px auto;
+        /* margin: 20px auto; */
     }
     h1{
         font-size: 100px;
@@ -157,12 +165,20 @@
        
     }
 
+    .date{
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        margin-top: 0px;
+        color: #AD47FF;
+    }
+
 
     .todo-input {
         width: 100%;
-        padding: 10px, 20px;
+        padding: 10px, 20px 0px 20px;
         font-size: 18px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 
     .todo-item{

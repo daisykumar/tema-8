@@ -979,63 +979,75 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
-    	let div3;
-    	let div1;
+    	let div4;
+    	let div2;
     	let input;
     	let t0;
     	let div0;
     	let t1;
-    	let div1_transition;
     	let t2;
-    	let div2;
+    	let div1;
+    	let t3;
+    	let div2_transition;
+    	let t4;
+    	let div3;
     	let current;
     	let dispose;
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div3 = element("div");
-    			div1 = element("div");
+    			div4 = element("div");
+    			div2 = element("div");
     			input = element("input");
     			t0 = space();
     			div0 = element("div");
-    			t1 = text(/*title*/ ctx[1]);
+    			t1 = text(/*title*/ ctx[2]);
     			t2 = space();
-    			div2 = element("div");
-    			div2.textContent = "x";
+    			div1 = element("div");
+    			t3 = text(/*date*/ ctx[1]);
+    			t4 = space();
+    			div3 = element("div");
+    			div3.textContent = "x";
     			attr_dev(input, "type", "checkbox");
-    			add_location(input, file, 30, 8, 636);
-    			attr_dev(div0, "class", "todo-item-label svelte-drupi7");
+    			add_location(input, file, 30, 8, 656);
+    			attr_dev(div0, "class", "todo-item-label box1 svelte-1h3rd0b");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
-    			add_location(div0, file, 31, 8, 720);
-    			attr_dev(div1, "class", "todo-item-left svelte-drupi7");
-    			add_location(div1, file, 29, 8, 555);
-    			attr_dev(div2, "class", "remove-item svelte-drupi7");
-    			add_location(div2, file, 34, 4, 807);
-    			attr_dev(div3, "class", "todo-item svelte-drupi7");
-    			add_location(div3, file, 28, 4, 523);
-    			add_location(main, file, 27, 0, 512);
+    			add_location(div0, file, 31, 8, 740);
+    			attr_dev(div1, "class", "todo-item-label box2 svelte-1h3rd0b");
+    			toggle_class(div1, "completed", /*completed*/ ctx[0]);
+    			add_location(div1, file, 32, 8, 824);
+    			attr_dev(div2, "class", "todo-item-left svelte-1h3rd0b");
+    			add_location(div2, file, 29, 8, 575);
+    			attr_dev(div3, "class", "remove-item svelte-1h3rd0b");
+    			add_location(div3, file, 35, 4, 915);
+    			attr_dev(div4, "class", "todo-item svelte-1h3rd0b");
+    			add_location(div4, file, 28, 4, 543);
+    			add_location(main, file, 27, 0, 532);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div3);
-    			append_dev(div3, div1);
-    			append_dev(div1, input);
+    			append_dev(main, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, input);
     			input.checked = /*completed*/ ctx[0];
-    			append_dev(div1, t0);
-    			append_dev(div1, div0);
+    			append_dev(div2, t0);
+    			append_dev(div2, div0);
     			append_dev(div0, t1);
-    			append_dev(div3, t2);
-    			append_dev(div3, div2);
+    			append_dev(div2, t2);
+    			append_dev(div2, div1);
+    			append_dev(div1, t3);
+    			append_dev(div4, t4);
+    			append_dev(div4, div3);
     			current = true;
 
     			dispose = [
-    				listen_dev(input, "change", /*input_change_handler*/ ctx[6]),
-    				listen_dev(input, "change", /*toggleComplete*/ ctx[3], false, false, false),
-    				listen_dev(div2, "click", /*deleteTodo*/ ctx[2], false, false, false)
+    				listen_dev(input, "change", /*input_change_handler*/ ctx[7]),
+    				listen_dev(input, "change", /*toggleComplete*/ ctx[4], false, false, false),
+    				listen_dev(div3, "click", /*deleteTodo*/ ctx[3], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -1043,30 +1055,36 @@ var app = (function () {
     				input.checked = /*completed*/ ctx[0];
     			}
 
-    			if (!current || dirty & /*title*/ 2) set_data_dev(t1, /*title*/ ctx[1]);
+    			if (!current || dirty & /*title*/ 4) set_data_dev(t1, /*title*/ ctx[2]);
 
     			if (dirty & /*completed*/ 1) {
     				toggle_class(div0, "completed", /*completed*/ ctx[0]);
+    			}
+
+    			if (!current || dirty & /*date*/ 2) set_data_dev(t3, /*date*/ ctx[1]);
+
+    			if (dirty & /*completed*/ 1) {
+    				toggle_class(div1, "completed", /*completed*/ ctx[0]);
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
 
     			add_render_callback(() => {
-    				if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fly, { y: 20, duration: 300 }, true);
-    				div1_transition.run(1);
+    				if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, { y: 20, duration: 300 }, true);
+    				div2_transition.run(1);
     			});
 
     			current = true;
     		},
     		o: function outro(local) {
-    			if (!div1_transition) div1_transition = create_bidirectional_transition(div1, fly, { y: 20, duration: 300 }, false);
-    			div1_transition.run(0);
+    			if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, { y: 20, duration: 300 }, false);
+    			div2_transition.run(0);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			if (detaching && div1_transition) div1_transition.end();
+    			if (detaching && div2_transition) div2_transition.end();
     			run_all(dispose);
     		}
     	};
@@ -1083,6 +1101,7 @@ var app = (function () {
     }
 
     function instance($$self, $$props, $$invalidate) {
+    	let { date } = $$props;
     	let { id } = $$props;
     	let { title } = $$props;
     	let { completed } = $$props;
@@ -1096,7 +1115,7 @@ var app = (function () {
     		dispatch("toggleComplete", { id });
     	}
 
-    	const writable_props = ["id", "title", "completed"];
+    	const writable_props = ["date", "id", "title", "completed"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<TodoItems> was created with unknown prop '${key}'`);
@@ -1108,14 +1127,16 @@ var app = (function () {
     	}
 
     	$$self.$set = $$props => {
-    		if ("id" in $$props) $$invalidate(4, id = $$props.id);
-    		if ("title" in $$props) $$invalidate(1, title = $$props.title);
+    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
+    		if ("id" in $$props) $$invalidate(5, id = $$props.id);
+    		if ("title" in $$props) $$invalidate(2, title = $$props.title);
     		if ("completed" in $$props) $$invalidate(0, completed = $$props.completed);
     	};
 
     	$$self.$capture_state = () => ({
     		createEventDispatcher,
     		fly,
+    		date,
     		id,
     		title,
     		completed,
@@ -1125,8 +1146,9 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("id" in $$props) $$invalidate(4, id = $$props.id);
-    		if ("title" in $$props) $$invalidate(1, title = $$props.title);
+    		if ("date" in $$props) $$invalidate(1, date = $$props.date);
+    		if ("id" in $$props) $$invalidate(5, id = $$props.id);
+    		if ("title" in $$props) $$invalidate(2, title = $$props.title);
     		if ("completed" in $$props) $$invalidate(0, completed = $$props.completed);
     	};
 
@@ -1136,6 +1158,7 @@ var app = (function () {
 
     	return [
     		completed,
+    		date,
     		title,
     		deleteTodo,
     		toggleComplete,
@@ -1148,7 +1171,7 @@ var app = (function () {
     class TodoItems extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { id: 4, title: 1, completed: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { date: 1, id: 5, title: 2, completed: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1160,17 +1183,29 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*id*/ ctx[4] === undefined && !("id" in props)) {
+    		if (/*date*/ ctx[1] === undefined && !("date" in props)) {
+    			console.warn("<TodoItems> was created without expected prop 'date'");
+    		}
+
+    		if (/*id*/ ctx[5] === undefined && !("id" in props)) {
     			console.warn("<TodoItems> was created without expected prop 'id'");
     		}
 
-    		if (/*title*/ ctx[1] === undefined && !("title" in props)) {
+    		if (/*title*/ ctx[2] === undefined && !("title" in props)) {
     			console.warn("<TodoItems> was created without expected prop 'title'");
     		}
 
     		if (/*completed*/ ctx[0] === undefined && !("completed" in props)) {
     			console.warn("<TodoItems> was created without expected prop 'completed'");
     		}
+    	}
+
+    	get date() {
+    		throw new Error("<TodoItems>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set date(value) {
+    		throw new Error("<TodoItems>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	get id() {
@@ -1528,7 +1563,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (121:8) {#each filteredTodos as todo}
+    // (129:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -1547,8 +1582,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
-    			attr_dev(div, "class", "todo-item svelte-1krwavc");
-    			add_location(div, file$1, 121, 12, 4623);
+    			attr_dev(div, "class", "todo-item svelte-7svqvs");
+    			add_location(div, file$1, 129, 12, 4792);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1581,7 +1616,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(121:8) {#each filteredTodos as todo}",
+    		source: "(129:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1590,35 +1625,39 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let main;
-    	let div0;
+    	let div8;
     	let h1;
     	let t1;
     	let input0;
     	let t2;
+    	let div0;
     	let updating_value;
     	let t3;
-    	let t4;
-    	let div3;
     	let div1;
-    	let label;
-    	let input1;
+    	let button0;
     	let t5;
     	let t6;
+    	let div4;
     	let div2;
+    	let label;
+    	let input1;
     	let t7;
     	let t8;
+    	let div3;
     	let t9;
-    	let div6;
-    	let div4;
-    	let button0;
-    	let strong;
+    	let t10;
     	let t11;
+    	let div7;
+    	let div5;
     	let button1;
+    	let strong;
     	let t13;
     	let button2;
     	let t15;
-    	let div5;
     	let button3;
+    	let t17;
+    	let div6;
+    	let button4;
     	let current;
     	let dispose;
 
@@ -1649,133 +1688,160 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div0 = element("div");
+    			div8 = element("div");
     			h1 = element("h1");
     			h1.textContent = "my to-dos";
     			t1 = space();
     			input0 = element("input");
     			t2 = space();
+    			div0 = element("div");
     			create_component(datefield.$$.fragment);
     			t3 = space();
+    			div1 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "Enter";
+    			t5 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t4 = space();
-    			div3 = element("div");
-    			div1 = element("div");
+    			t6 = space();
+    			div4 = element("div");
+    			div2 = element("div");
     			label = element("label");
     			input1 = element("input");
-    			t5 = text("Check All");
-    			t6 = space();
-    			div2 = element("div");
-    			t7 = text(/*todosRemaining*/ ctx[3]);
-    			t8 = text(" Items Left");
-    			t9 = space();
-    			div6 = element("div");
-    			div4 = element("div");
-    			button0 = element("button");
+    			t7 = text("Check All");
+    			t8 = space();
+    			div3 = element("div");
+    			t9 = text(/*todosRemaining*/ ctx[3]);
+    			t10 = text(" Items Left");
+    			t11 = space();
+    			div7 = element("div");
+    			div5 = element("div");
+    			button1 = element("button");
     			strong = element("strong");
     			strong.textContent = "All";
-    			t11 = space();
-    			button1 = element("button");
-    			button1.textContent = "Active";
     			t13 = space();
     			button2 = element("button");
-    			button2.textContent = "Completed";
+    			button2.textContent = "Active";
     			t15 = space();
-    			div5 = element("div");
     			button3 = element("button");
-    			button3.textContent = "Clear Completed";
-    			attr_dev(h1, "class", "svelte-1krwavc");
-    			add_location(h1, file$1, 110, 8, 3985);
+    			button3.textContent = "Completed";
+    			t17 = space();
+    			div6 = element("div");
+    			button4 = element("button");
+    			button4.textContent = "Clear Completed";
+    			attr_dev(h1, "class", "svelte-7svqvs");
+    			add_location(h1, file$1, 113, 8, 4011);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", "todo-input svelte-1krwavc");
+    			attr_dev(input0, "class", "todo-input svelte-7svqvs");
     			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
-    			add_location(input0, file$1, 111, 8, 4013);
-    			attr_dev(div0, "class", "container svelte-1krwavc");
-    			add_location(div0, file$1, 108, 4, 3948);
-    			attr_dev(input1, "class", "inner-container-input svelte-1krwavc");
+    			add_location(input0, file$1, 114, 8, 4039);
+    			attr_dev(div0, "class", "date svelte-7svqvs");
+    			add_location(div0, file$1, 121, 8, 4507);
+    			attr_dev(button0, "class", "svelte-7svqvs");
+    			add_location(button0, file$1, 126, 12, 4680);
+    			attr_dev(div1, "class", "buttonDate");
+    			add_location(div1, file$1, 125, 8, 4643);
+    			attr_dev(input1, "class", "inner-container-input svelte-7svqvs");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 126, 24, 4858);
-    			add_location(label, file$1, 126, 17, 4851);
-    			add_location(div1, file$1, 126, 12, 4846);
-    			add_location(div2, file$1, 127, 12, 4973);
-    			attr_dev(div3, "class", "inner-container svelte-1krwavc");
-    			add_location(div3, file$1, 125, 8, 4804);
-    			add_location(strong, file$1, 131, 102, 5185);
-    			attr_dev(button0, "class", "svelte-1krwavc");
-    			toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button0, file$1, 131, 16, 5099);
-    			attr_dev(button1, "class", "svelte-1krwavc");
-    			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button1, file$1, 132, 16, 5231);
-    			attr_dev(button2, "class", "svelte-1krwavc");
-    			toggle_class(button2, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button2, file$1, 133, 16, 5355);
-    			add_location(div4, file$1, 130, 12, 5077);
-    			attr_dev(button3, "class", "svelte-1krwavc");
-    			add_location(button3, file$1, 136, 16, 5528);
-    			add_location(div5, file$1, 135, 12, 5506);
-    			attr_dev(div6, "class", "inner-container svelte-1krwavc");
-    			add_location(div6, file$1, 129, 8, 5035);
-    			attr_dev(main, "class", "svelte-1krwavc");
-    			add_location(main, file$1, 106, 0, 3936);
+    			add_location(input1, file$1, 134, 24, 5027);
+    			add_location(label, file$1, 134, 17, 5020);
+    			add_location(div2, file$1, 134, 12, 5015);
+    			add_location(div3, file$1, 135, 12, 5142);
+    			attr_dev(div4, "class", "inner-container svelte-7svqvs");
+    			add_location(div4, file$1, 133, 8, 4973);
+    			add_location(strong, file$1, 139, 102, 5354);
+    			attr_dev(button1, "class", "svelte-7svqvs");
+    			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
+    			add_location(button1, file$1, 139, 16, 5268);
+    			attr_dev(button2, "class", "svelte-7svqvs");
+    			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
+    			add_location(button2, file$1, 140, 16, 5400);
+    			attr_dev(button3, "class", "svelte-7svqvs");
+    			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
+    			add_location(button3, file$1, 141, 16, 5524);
+    			add_location(div5, file$1, 138, 12, 5246);
+    			attr_dev(button4, "class", "svelte-7svqvs");
+    			add_location(button4, file$1, 144, 16, 5697);
+    			add_location(div6, file$1, 143, 12, 5675);
+    			attr_dev(div7, "class", "inner-container svelte-7svqvs");
+    			add_location(div7, file$1, 137, 8, 5204);
+    			attr_dev(div8, "class", "container svelte-7svqvs");
+    			add_location(div8, file$1, 112, 4, 3979);
+    			attr_dev(main, "class", "svelte-7svqvs");
+    			add_location(main, file$1, 110, 0, 3967);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div0);
-    			append_dev(div0, h1);
-    			append_dev(div0, t1);
-    			append_dev(div0, input0);
+    			append_dev(main, div8);
+    			append_dev(div8, h1);
+    			append_dev(div8, t1);
+    			append_dev(div8, input0);
     			set_input_value(input0, /*newTodoTitle*/ ctx[0]);
-    			append_dev(div0, t2);
+    			append_dev(div8, t2);
+    			append_dev(div8, div0);
     			mount_component(datefield, div0, null);
-    			append_dev(main, t3);
+    			append_dev(div8, t3);
+    			append_dev(div8, div1);
+    			append_dev(div1, button0);
+    			append_dev(div8, t5);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(main, null);
+    				each_blocks[i].m(div8, null);
     			}
 
-    			append_dev(main, t4);
-    			append_dev(main, div3);
-    			append_dev(div3, div1);
-    			append_dev(div1, label);
+    			append_dev(div8, t6);
+    			append_dev(div8, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, label);
     			append_dev(label, input1);
-    			append_dev(label, t5);
-    			append_dev(div3, t6);
-    			append_dev(div3, div2);
-    			append_dev(div2, t7);
-    			append_dev(div2, t8);
-    			append_dev(main, t9);
-    			append_dev(main, div6);
-    			append_dev(div6, div4);
-    			append_dev(div4, button0);
-    			append_dev(button0, strong);
-    			append_dev(div4, t11);
-    			append_dev(div4, button1);
-    			append_dev(div4, t13);
-    			append_dev(div4, button2);
-    			append_dev(div6, t15);
-    			append_dev(div6, div5);
+    			append_dev(label, t7);
+    			append_dev(div4, t8);
+    			append_dev(div4, div3);
+    			append_dev(div3, t9);
+    			append_dev(div3, t10);
+    			append_dev(div8, t11);
+    			append_dev(div8, div7);
+    			append_dev(div7, div5);
+    			append_dev(div5, button1);
+    			append_dev(button1, strong);
+    			append_dev(div5, t13);
+    			append_dev(div5, button2);
+    			append_dev(div5, t15);
     			append_dev(div5, button3);
+    			append_dev(div7, t17);
+    			append_dev(div7, div6);
+    			append_dev(div6, button4);
     			current = true;
 
     			dispose = [
     				listen_dev(input0, "input", /*input0_input_handler*/ ctx[17]),
     				listen_dev(input0, "keydown", /*addTodo*/ ctx[5], false, false, false),
+    				listen_dev(
+    					button0,
+    					"click",
+    					function () {
+    						if (is_function(/*newTodoTitle*/ ctx[0])) /*newTodoTitle*/ ctx[0].apply(this, arguments);
+    					},
+    					false,
+    					false,
+    					false
+    				),
     				listen_dev(input1, "change", /*checkAllTodos*/ ctx[6], false, false, false),
-    				listen_dev(button0, "click", /*click_handler*/ ctx[19], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[20], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_2*/ ctx[21], false, false, false),
-    				listen_dev(button3, "click", /*clearCompleted*/ ctx[8], false, false, false)
+    				listen_dev(button1, "click", /*click_handler*/ ctx[19], false, false, false),
+    				listen_dev(button2, "click", /*click_handler_1*/ ctx[20], false, false, false),
+    				listen_dev(button3, "click", /*click_handler_2*/ ctx[21], false, false, false),
+    				listen_dev(button4, "click", /*clearCompleted*/ ctx[8], false, false, false)
     			];
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+
     			if (dirty & /*newTodoTitle*/ 1 && input0.value !== /*newTodoTitle*/ ctx[0]) {
     				set_input_value(input0, /*newTodoTitle*/ ctx[0]);
     			}
@@ -1805,7 +1871,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(main, t4);
+    						each_blocks[i].m(div8, t6);
     					}
     				}
 
@@ -1818,18 +1884,18 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*todosRemaining*/ 8) set_data_dev(t7, /*todosRemaining*/ ctx[3]);
+    			if (!current || dirty & /*todosRemaining*/ 8) set_data_dev(t9, /*todosRemaining*/ ctx[3]);
 
     			if (dirty & /*currentFilter*/ 2) {
-    				toggle_class(button0, "active", /*currentFilter*/ ctx[1] === "all");
+    				toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
     			}
 
     			if (dirty & /*currentFilter*/ 2) {
-    				toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "active");
+    				toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
     			}
 
     			if (dirty & /*currentFilter*/ 2) {
-    				toggle_class(button2, "completed", /*currentFilter*/ ctx[1] === "completed");
+    				toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
     			}
     		},
     		i: function intro(local) {
@@ -1884,17 +1950,20 @@ var app = (function () {
     	let todos = [
     		{
     			id: 1,
-    			title: "My first to-do" + "Target Date" + now,
+    			title: "My first to-do",
+    			date: now,
     			completed: false
     		},
     		{
     			id: 2,
-    			title: "My second to-do" + "Target Date" + now,
+    			title: "My second to-do",
+    			date: now,
     			completed: false
     		},
     		{
     			id: 3,
-    			title: "My third to-do" + "Target Date" + now,
+    			title: "My third to-do",
+    			date: now,
     			completed: false
     		}
     	];
@@ -1906,7 +1975,8 @@ var app = (function () {
     				{
     					id: nextId,
     					completed: false,
-    					title: newTodoTitle + toDoItemDate
+    					title: newTodoTitle,
+    					date: toDoItemDate
     				}
     			]);
 

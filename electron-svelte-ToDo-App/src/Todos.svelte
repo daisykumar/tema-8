@@ -103,7 +103,16 @@ function submit(event) {
 
         <div class="wrapper">
             <div class="date">
-                <Datefield format='DD-MM-YYYY' icon=false bind:value={toDoItemDate}></Datefield>
+                <Datefield format='DD-MM-YYYY' 
+                    icon=false 
+                    bind:value={toDoItemDate}
+                      isAllowed={toDoItemDate => {
+                            const millisecs = toDoItemDate.getTime();
+                            if (millisecs + 25 * 3600 * 1000 < now) return false;
+                            if (millisecs > now + 3600 * 24 * 45 * 1000) return false;
+                            return true;
+                        }}
+                ></Datefield>
             </div> 
         
         <button class="enterButton" on:click="{addTodo}">Enter</button>

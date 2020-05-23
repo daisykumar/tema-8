@@ -224,5 +224,4 @@ function submit(event) {
             margin: 1rem;
         }
     }
-
 </style>

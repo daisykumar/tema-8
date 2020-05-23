@@ -27,7 +27,7 @@
 		<!--Content here-->
 		<h2>Show Content here</h2>
 	{/if}
-	<!--Activity activity={activity} /-->
+	<!--Activity activity={activity}/-->
 </main>
 
 <style>

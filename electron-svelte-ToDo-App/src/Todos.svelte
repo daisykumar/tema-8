@@ -13,7 +13,7 @@
     let currentFilter = 'all';
     let nextId = 4;
 
-	let show = false;
+    let show = false;
     let count = 1;
 
     let toDoItemDate;

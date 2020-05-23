@@ -1563,7 +1563,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (107:8) {#each filteredTodos as todo}
+    // (112:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -1582,8 +1582,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
-    			attr_dev(div, "class", "todo-item svelte-103l59d");
-    			add_location(div, file$1, 107, 12, 2958);
+    			attr_dev(div, "class", "todo-item svelte-1jokx9");
+    			add_location(div, file$1, 112, 12, 3077);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1616,7 +1616,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(107:8) {#each filteredTodos as todo}",
+    		source: "(112:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1732,46 +1732,46 @@ var app = (function () {
     			div6 = element("div");
     			button4 = element("button");
     			button4.textContent = "Clear Completed";
-    			attr_dev(h1, "class", "svelte-103l59d");
-    			add_location(h1, file$1, 95, 8, 2449);
+    			attr_dev(h1, "class", "svelte-1jokx9");
+    			add_location(h1, file$1, 100, 8, 2568);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", "todo-input svelte-103l59d");
+    			attr_dev(input0, "class", "todo-input svelte-1jokx9");
     			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
-    			add_location(input0, file$1, 96, 8, 2477);
-    			attr_dev(div0, "class", "date svelte-103l59d");
-    			add_location(div0, file$1, 99, 12, 2671);
-    			attr_dev(button0, "class", "enterButton svelte-103l59d");
-    			add_location(button0, file$1, 103, 8, 2824);
+    			add_location(input0, file$1, 101, 8, 2596);
+    			attr_dev(div0, "class", "date svelte-1jokx9");
+    			add_location(div0, file$1, 104, 12, 2790);
+    			attr_dev(button0, "class", "enterButton svelte-1jokx9");
+    			add_location(button0, file$1, 108, 8, 2943);
     			attr_dev(div1, "class", "wrapper");
-    			add_location(div1, file$1, 98, 8, 2637);
-    			attr_dev(input1, "class", "inner-container-input svelte-103l59d");
+    			add_location(div1, file$1, 103, 8, 2756);
+    			attr_dev(input1, "class", "inner-container-input svelte-1jokx9");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 112, 24, 3193);
-    			add_location(label, file$1, 112, 17, 3186);
-    			add_location(div2, file$1, 112, 12, 3181);
-    			add_location(div3, file$1, 113, 12, 3308);
-    			attr_dev(div4, "class", "inner-container svelte-103l59d");
-    			add_location(div4, file$1, 111, 8, 3139);
-    			add_location(strong, file$1, 117, 102, 3520);
-    			attr_dev(button1, "class", "svelte-103l59d");
+    			add_location(input1, file$1, 117, 24, 3312);
+    			add_location(label, file$1, 117, 17, 3305);
+    			add_location(div2, file$1, 117, 12, 3300);
+    			add_location(div3, file$1, 118, 12, 3427);
+    			attr_dev(div4, "class", "inner-container svelte-1jokx9");
+    			add_location(div4, file$1, 116, 8, 3258);
+    			add_location(strong, file$1, 122, 102, 3639);
+    			attr_dev(button1, "class", "svelte-1jokx9");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button1, file$1, 117, 16, 3434);
-    			attr_dev(button2, "class", "svelte-103l59d");
+    			add_location(button1, file$1, 122, 16, 3553);
+    			attr_dev(button2, "class", "svelte-1jokx9");
     			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button2, file$1, 118, 16, 3566);
-    			attr_dev(button3, "class", "svelte-103l59d");
+    			add_location(button2, file$1, 123, 16, 3685);
+    			attr_dev(button3, "class", "svelte-1jokx9");
     			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button3, file$1, 119, 16, 3690);
-    			add_location(div5, file$1, 116, 12, 3412);
-    			attr_dev(button4, "class", "svelte-103l59d");
-    			add_location(button4, file$1, 122, 16, 3863);
-    			add_location(div6, file$1, 121, 12, 3841);
-    			attr_dev(div7, "class", "inner-container svelte-103l59d");
-    			add_location(div7, file$1, 115, 8, 3370);
-    			attr_dev(div8, "class", "container svelte-103l59d");
-    			add_location(div8, file$1, 94, 4, 2417);
-    			attr_dev(main, "class", "svelte-103l59d");
-    			add_location(main, file$1, 92, 0, 2405);
+    			add_location(button3, file$1, 124, 16, 3809);
+    			add_location(div5, file$1, 121, 12, 3531);
+    			attr_dev(button4, "class", "svelte-1jokx9");
+    			add_location(button4, file$1, 127, 16, 3982);
+    			add_location(div6, file$1, 126, 12, 3960);
+    			attr_dev(div7, "class", "inner-container svelte-1jokx9");
+    			add_location(div7, file$1, 120, 8, 3489);
+    			attr_dev(div8, "class", "container svelte-1jokx9");
+    			add_location(div8, file$1, 99, 4, 2536);
+    			attr_dev(main, "class", "svelte-1jokx9");
+    			add_location(main, file$1, 97, 0, 2524);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1959,19 +1959,23 @@ var app = (function () {
     	];
 
     	function addTodo() {
-    		$$invalidate(13, todos = [
-    			...todos,
-    			{
-    				id: nextId,
-    				completed: false,
-    				title: newTodoTitle,
-    				date: toDoItemDate
-    			}
-    		]);
+    		if (newTodoTitle === "") {
+    			alert("Please enter atleast your To-Do");
+    		} else {
+    			$$invalidate(13, todos = [
+    				...todos,
+    				{
+    					id: nextId,
+    					completed: false,
+    					title: newTodoTitle,
+    					date: toDoItemDate
+    				}
+    			]);
 
-    		nextId = nextId + 1;
-    		$$invalidate(0, newTodoTitle = "");
-    		$$invalidate(2, toDoItemDate = "");
+    			nextId = nextId + 1;
+    			$$invalidate(0, newTodoTitle = "");
+    			$$invalidate(2, toDoItemDate = "");
+    		}
     	}
 
     	function checkAllTodos(event) {
@@ -2045,6 +2049,7 @@ var app = (function () {
     		handleToggleComplete,
     		submit,
     		Date,
+    		alert,
     		todosRemaining,
     		filteredTodos
     	});

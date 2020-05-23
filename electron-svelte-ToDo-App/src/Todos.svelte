@@ -42,6 +42,10 @@
     ];
 
     function addTodo() {
+        if (newTodoTitle === ""){
+            alert('Please enter atleast your To-Do');
+        }
+        else {
             todos = [...todos, {
                 id: nextId,
                 completed: false,
@@ -51,6 +55,7 @@
             nextId = nextId + 1;
             newTodoTitle = '';
             toDoItemDate = '';
+    }
     }
 
     $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
@@ -127,6 +132,9 @@ function submit(event) {
 </main>
 
 <style>
+	:global(:root) {
+        --primary: rgb(73, 71, 75);
+	}
     main{
         padding: 0 20px 20px 20px;
     }
@@ -205,6 +213,16 @@ function submit(event) {
     .active, .completed {
         background: lightseagreen;
     }
-
+	@media (max-width: 410px) {
+		main {
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));		
+        }
+        .enterButton{
+            margin: 1rem;
+        }
+    }
 
 </style>

@@ -6,18 +6,18 @@
     import 'focus-visible';
 
     // import any components
-    import { Button, Checkbox, Datefield } from 'svelte-mui';
+    import { Button, Checkbox, Datefield} from 'svelte-mui';
     
     let checked = true;
     let newTodoTitle = '';
     let currentFilter = 'all';
-    let nextId = 4;
+    let nextId = 3;
 
     let show = false;
     let count = 1;
 
     let toDoItemDate;
-    let now = new Date().getDate()+'-'+(new Date().getMonth()+1)+'-'+new Date().getFullYear();
+    let now = (("0" + (new Date().getDate() + 1)).slice(-2))+'-'+(("0" + (new Date().getMonth() + 1)).slice(-2))+'-'+new Date().getFullYear();
 
     // Todo Arrays
     let todos = [
@@ -32,12 +32,6 @@
             title: 'My second to-do',
             date: now,
             completed: false,
-        },
-        {
-            id: 3,
-            title: 'My third to-do',
-            date: now,
-            completed: false,
         }
     ];
 
@@ -45,6 +39,7 @@
         if (newTodoTitle === ""){
             alert('Please enter atleast your To-Do');
         }
+        else if (newTodoTitle.length > 30){alert('To-Do length cannot exceed 30 characters');}
         else {
             todos = [...todos, {
                 id: nextId,
@@ -104,14 +99,13 @@ function submit(event) {
         <div class="wrapper">
             <div class="date">
                 <Datefield format='DD-MM-YYYY' 
-                    icon=false 
+                    icon=false
                     bind:value={toDoItemDate}
-                      isAllowed={toDoItemDate => {
-                            const millisecs = toDoItemDate.getTime();
-                            if (millisecs + 25 * 3600 * 1000 < now) return false;
-                            if (millisecs > now + 3600 * 24 * 45 * 1000) return false;
-                            return true;
-                        }}
+                    isAllowed={toDoItemDate => {
+                    const millisecs = toDoItemDate;
+                    if (millisecs < Date.now()) return false;
+                    return true;
+                }}
                 ></Datefield>
             </div> 
         

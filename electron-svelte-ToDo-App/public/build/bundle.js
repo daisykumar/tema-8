@@ -1010,20 +1010,20 @@ var app = (function () {
     			div3 = element("div");
     			div3.textContent = "x";
     			attr_dev(input, "type", "checkbox");
-    			add_location(input, file, 29, 8, 590);
+    			add_location(input, file, 33, 8, 722);
     			attr_dev(div0, "class", "todo-item-label box1 svelte-1wcth6p");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
-    			add_location(div0, file, 30, 8, 674);
+    			add_location(div0, file, 34, 8, 806);
     			attr_dev(div1, "class", "todo-item-label box2 svelte-1wcth6p");
     			toggle_class(div1, "completed", /*completed*/ ctx[0]);
-    			add_location(div1, file, 31, 8, 758);
+    			add_location(div1, file, 35, 8, 890);
     			attr_dev(div2, "class", "todo-item-left svelte-1wcth6p");
-    			add_location(div2, file, 28, 8, 509);
+    			add_location(div2, file, 32, 8, 641);
     			attr_dev(div3, "class", "remove-item svelte-1wcth6p");
-    			add_location(div3, file, 34, 4, 849);
+    			add_location(div3, file, 38, 4, 981);
     			attr_dev(div4, "class", "todo-item svelte-1wcth6p");
-    			add_location(div4, file, 27, 4, 477);
-    			add_location(main, file, 26, 0, 466);
+    			add_location(div4, file, 31, 4, 609);
+    			add_location(main, file, 30, 0, 598);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1108,7 +1108,9 @@ var app = (function () {
     	const dispatch = createEventDispatcher();
 
     	function deleteTodo() {
-    		dispatch("deleteTodo", { id });
+    		if (confirm("Are you sure you want to delet this entry?")) {
+    			dispatch("deleteTodo", { id });
+    		} // Do nothing!
     	}
 
     	function toggleComplete() {
@@ -1142,7 +1144,8 @@ var app = (function () {
     		completed,
     		dispatch,
     		deleteTodo,
-    		toggleComplete
+    		toggleComplete,
+    		confirm
     	});
 
     	$$self.$inject_state = $$props => {
@@ -1563,7 +1566,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (121:8) {#each filteredTodos as todo}
+    // (115:8) {#each filteredTodos as todo}
     function create_each_block(ctx) {
     	let div;
     	let current;
@@ -1575,15 +1578,15 @@ var app = (function () {
     	}
 
     	const todoitems = new TodoItems({ props: todoitems_props, $$inline: true });
-    	todoitems.$on("deleteTodo", /*handleDeleteTodo*/ ctx[10]);
-    	todoitems.$on("toggleComplete", /*handleToggleComplete*/ ctx[11]);
+    	todoitems.$on("deleteTodo", /*handleDeleteTodo*/ ctx[9]);
+    	todoitems.$on("toggleComplete", /*handleToggleComplete*/ ctx[10]);
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
     			attr_dev(div, "class", "todo-item svelte-r69pbd");
-    			add_location(div, file$1, 121, 12, 3497);
+    			add_location(div, file$1, 115, 12, 3365);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1616,7 +1619,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(121:8) {#each filteredTodos as todo}",
+    		source: "(115:8) {#each filteredTodos as todo}",
     		ctx
     	});
 
@@ -1737,45 +1740,45 @@ var app = (function () {
     			button4 = element("button");
     			button4.textContent = "Clear Completed";
     			attr_dev(h1, "class", "svelte-r69pbd");
-    			add_location(h1, file$1, 100, 8, 2571);
+    			add_location(h1, file$1, 95, 8, 2583);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "todo-input svelte-r69pbd");
     			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
-    			add_location(input0, file$1, 101, 8, 2599);
+    			add_location(input0, file$1, 96, 8, 2611);
     			attr_dev(div0, "class", "date svelte-r69pbd");
-    			add_location(div0, file$1, 104, 12, 2793);
+    			add_location(div0, file$1, 99, 12, 2805);
     			attr_dev(button0, "class", "enterButton svelte-r69pbd");
-    			add_location(button0, file$1, 117, 8, 3363);
+    			add_location(button0, file$1, 111, 8, 3231);
     			attr_dev(div1, "class", "wrapper");
-    			add_location(div1, file$1, 103, 8, 2759);
+    			add_location(div1, file$1, 98, 8, 2771);
     			attr_dev(input1, "class", "inner-container-input svelte-r69pbd");
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$1, 126, 24, 3732);
-    			add_location(label, file$1, 126, 17, 3725);
-    			add_location(div2, file$1, 126, 12, 3720);
-    			add_location(div3, file$1, 127, 12, 3847);
+    			add_location(input1, file$1, 120, 24, 3600);
+    			add_location(label, file$1, 120, 17, 3593);
+    			add_location(div2, file$1, 120, 12, 3588);
+    			add_location(div3, file$1, 121, 12, 3715);
     			attr_dev(div4, "class", "inner-container svelte-r69pbd");
-    			add_location(div4, file$1, 125, 8, 3678);
-    			add_location(strong, file$1, 131, 102, 4059);
+    			add_location(div4, file$1, 119, 8, 3546);
+    			add_location(strong, file$1, 125, 102, 3927);
     			attr_dev(button1, "class", "svelte-r69pbd");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
-    			add_location(button1, file$1, 131, 16, 3973);
+    			add_location(button1, file$1, 125, 16, 3841);
     			attr_dev(button2, "class", "svelte-r69pbd");
     			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
-    			add_location(button2, file$1, 132, 16, 4105);
+    			add_location(button2, file$1, 126, 16, 3973);
     			attr_dev(button3, "class", "svelte-r69pbd");
     			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
-    			add_location(button3, file$1, 133, 16, 4229);
-    			add_location(div5, file$1, 130, 12, 3951);
+    			add_location(button3, file$1, 127, 16, 4097);
+    			add_location(div5, file$1, 124, 12, 3819);
     			attr_dev(button4, "class", "svelte-r69pbd");
-    			add_location(button4, file$1, 136, 16, 4402);
-    			add_location(div6, file$1, 135, 12, 4380);
+    			add_location(button4, file$1, 130, 16, 4270);
+    			add_location(div6, file$1, 129, 12, 4248);
     			attr_dev(div7, "class", "inner-container svelte-r69pbd");
-    			add_location(div7, file$1, 129, 8, 3909);
+    			add_location(div7, file$1, 123, 8, 3777);
     			attr_dev(div8, "class", "container svelte-r69pbd");
-    			add_location(div8, file$1, 99, 4, 2539);
+    			add_location(div8, file$1, 94, 4, 2551);
     			attr_dev(main, "class", "svelte-r69pbd");
-    			add_location(main, file$1, 97, 0, 2527);
+    			add_location(main, file$1, 92, 0, 2539);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1825,13 +1828,13 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(input0, "input", /*input0_input_handler*/ ctx[18]),
-    				listen_dev(input0, "keydown", /*submit*/ ctx[12], false, false, false),
-    				listen_dev(button0, "click", /*addTodo*/ ctx[6], false, false, false),
-    				listen_dev(input1, "change", /*checkAllTodos*/ ctx[7], false, false, false),
+    				listen_dev(input0, "keydown", /*submit*/ ctx[11], false, false, false),
+    				listen_dev(button0, "click", /*addTodo*/ ctx[5], false, false, false),
+    				listen_dev(input1, "change", /*checkAllTodos*/ ctx[6], false, false, false),
     				listen_dev(button1, "click", /*click_handler*/ ctx[21], false, false, false),
     				listen_dev(button2, "click", /*click_handler_1*/ ctx[22], false, false, false),
     				listen_dev(button3, "click", /*click_handler_2*/ ctx[23], false, false, false),
-    				listen_dev(button4, "click", /*clearCompleted*/ ctx[9], false, false, false)
+    				listen_dev(button4, "click", /*clearCompleted*/ ctx[8], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -1849,7 +1852,7 @@ var app = (function () {
 
     			datefield.$set(datefield_changes);
 
-    			if (dirty & /*filteredTodos, handleDeleteTodo, handleToggleComplete*/ 3088) {
+    			if (dirty & /*filteredTodos, handleDeleteTodo, handleToggleComplete*/ 1552) {
     				each_value = /*filteredTodos*/ ctx[4];
     				validate_each_argument(each_value);
     				let i;
@@ -1934,11 +1937,11 @@ var app = (function () {
     	let checked = true;
     	let newTodoTitle = "";
     	let currentFilter = "all";
-    	let nextId = 4;
+    	let nextId = 3;
     	let show = false;
     	let count = 1;
     	let toDoItemDate;
-    	let now = new Date().getDate() + "-" + (new Date().getMonth() + 1) + "-" + new Date().getFullYear();
+    	let now = ("0" + (new Date().getDate() + 1)).slice(-2) + "-" + ("0" + (new Date().getMonth() + 1)).slice(-2) + "-" + new Date().getFullYear();
 
     	// Todo Arrays
     	let todos = [
@@ -1953,20 +1956,16 @@ var app = (function () {
     			title: "My second to-do",
     			date: now,
     			completed: false
-    		},
-    		{
-    			id: 3,
-    			title: "My third to-do",
-    			date: now,
-    			completed: false
     		}
     	];
 
     	function addTodo() {
     		if (newTodoTitle === "") {
     			alert("Please enter atleast your To-Do");
+    		} else if (newTodoTitle.length > 30) {
+    			alert("To-Do length cannot exceed 30 characters");
     		} else {
-    			$$invalidate(14, todos = [
+    			$$invalidate(13, todos = [
     				...todos,
     				{
     					id: nextId,
@@ -1984,7 +1983,7 @@ var app = (function () {
 
     	function checkAllTodos(event) {
     		todos.forEach(todo => todo.completed = event.target.checked);
-    		$$invalidate(14, todos);
+    		$$invalidate(13, todos);
     	}
 
     	function updateFilter(newFilter) {
@@ -1992,11 +1991,11 @@ var app = (function () {
     	}
 
     	function clearCompleted() {
-    		$$invalidate(14, todos = todos.filter(todo => !todo.completed));
+    		$$invalidate(13, todos = todos.filter(todo => !todo.completed));
     	}
 
     	function handleDeleteTodo(event) {
-    		$$invalidate(14, todos = todos.filter(todo => todo.id !== event.detail.id));
+    		$$invalidate(13, todos = todos.filter(todo => todo.id !== event.detail.id));
     	}
 
     	function handleToggleComplete(event) {
@@ -2007,7 +2006,7 @@ var app = (function () {
     			completed: !todos[todoIndex].completed
     		};
 
-    		$$invalidate(14, todos = [...todos.slice(0, todoIndex), updatedTodo, ...todos.slice(todoIndex + 1)]);
+    		$$invalidate(13, todos = [...todos.slice(0, todoIndex), updatedTodo, ...todos.slice(todoIndex + 1)]);
     	}
 
     	//Function for Button 'ENTER' 
@@ -2023,9 +2022,8 @@ var app = (function () {
     	}
 
     	const func = toDoItemDate => {
-    		const millisecs = toDoItemDate.getTime();
-    		if (millisecs + 25 * 3600 * 1000 < now) return false;
-    		if (millisecs > now + 3600 * 24 * 45 * 1000) return false;
+    		const millisecs = toDoItemDate;
+    		if (millisecs < Date.now()) return false;
     		return true;
     	};
 
@@ -2073,8 +2071,8 @@ var app = (function () {
     		if ("show" in $$props) show = $$props.show;
     		if ("count" in $$props) count = $$props.count;
     		if ("toDoItemDate" in $$props) $$invalidate(2, toDoItemDate = $$props.toDoItemDate);
-    		if ("now" in $$props) $$invalidate(5, now = $$props.now);
-    		if ("todos" in $$props) $$invalidate(14, todos = $$props.todos);
+    		if ("now" in $$props) now = $$props.now;
+    		if ("todos" in $$props) $$invalidate(13, todos = $$props.todos);
     		if ("todosRemaining" in $$props) $$invalidate(3, todosRemaining = $$props.todosRemaining);
     		if ("filteredTodos" in $$props) $$invalidate(4, filteredTodos = $$props.filteredTodos);
     	};
@@ -2087,7 +2085,7 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*currentFilter, todos*/ 16386) {
+    		if ($$self.$$.dirty & /*currentFilter, todos*/ 8194) {
     			 $$invalidate(4, filteredTodos = currentFilter === "all"
     			? todos
     			: currentFilter === "completed"
@@ -2106,7 +2104,6 @@ var app = (function () {
     		toDoItemDate,
     		todosRemaining,
     		filteredTodos,
-    		now,
     		addTodo,
     		checkAllTodos,
     		updateFilter,
@@ -2119,6 +2116,7 @@ var app = (function () {
     		checked,
     		show,
     		count,
+    		now,
     		input0_input_handler,
     		func,
     		datefield_value_binding,

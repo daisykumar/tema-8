@@ -991,6 +991,7 @@ var app = (function () {
     	let div2_transition;
     	let t4;
     	let div3;
+    	let i;
     	let current;
     	let dispose;
 
@@ -1008,7 +1009,7 @@ var app = (function () {
     			t3 = text(/*date*/ ctx[1]);
     			t4 = space();
     			div3 = element("div");
-    			div3.textContent = "x";
+    			i = element("i");
     			attr_dev(input, "type", "checkbox");
     			add_location(input, file, 29, 8, 603);
     			attr_dev(div0, "class", "todo-item-label box1 svelte-1wcth6p");
@@ -1019,6 +1020,8 @@ var app = (function () {
     			add_location(div1, file, 31, 8, 771);
     			attr_dev(div2, "class", "todo-item-left svelte-1wcth6p");
     			add_location(div2, file, 28, 8, 522);
+    			attr_dev(i, "class", "fas fa-times");
+    			add_location(i, file, 35, 8, 918);
     			attr_dev(div3, "class", "remove-item svelte-1wcth6p");
     			add_location(div3, file, 34, 4, 862);
     			attr_dev(div4, "class", "todo-item svelte-1wcth6p");
@@ -1042,6 +1045,7 @@ var app = (function () {
     			append_dev(div1, t3);
     			append_dev(div4, t4);
     			append_dev(div4, div3);
+    			append_dev(div3, i);
     			current = true;
 
     			dispose = [

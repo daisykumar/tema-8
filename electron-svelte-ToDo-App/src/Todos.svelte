@@ -39,7 +39,7 @@
         if (newTodoTitle === ""){
             alert('Please enter atleast your To-Do');
         }
-        else if (newTodoTitle.length > 30){alert('To-Do length cannot exceed 30 characters');}
+        else if (newTodoTitle.length > 50){alert('To-Do length cannot exceed 50 characters');}
         else {
             todos = [...todos, {
                 id: nextId,
@@ -222,6 +222,9 @@ function submit(event) {
             display: grid;
             grid-gap: 1rem;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));		
+        }
+        h1{
+            font-size: 30px;
         }
         .enterButton{
             margin: 1rem;

@@ -10,13 +10,9 @@
     const dispatch = createEventDispatcher();
 
     function deleteTodo(){
-        if (confirm('Are you sure you want to delet this entry?')) {
             dispatch('deleteTodo', {
                 id: id 
             });
-        } else {
-        // Do nothing!
-        }
     }
 
     function toggleComplete(){

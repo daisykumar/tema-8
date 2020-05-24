@@ -1010,20 +1010,20 @@ var app = (function () {
     			div3 = element("div");
     			div3.textContent = "x";
     			attr_dev(input, "type", "checkbox");
-    			add_location(input, file, 33, 8, 722);
+    			add_location(input, file, 29, 8, 603);
     			attr_dev(div0, "class", "todo-item-label box1 svelte-1wcth6p");
     			toggle_class(div0, "completed", /*completed*/ ctx[0]);
-    			add_location(div0, file, 34, 8, 806);
+    			add_location(div0, file, 30, 8, 687);
     			attr_dev(div1, "class", "todo-item-label box2 svelte-1wcth6p");
     			toggle_class(div1, "completed", /*completed*/ ctx[0]);
-    			add_location(div1, file, 35, 8, 890);
+    			add_location(div1, file, 31, 8, 771);
     			attr_dev(div2, "class", "todo-item-left svelte-1wcth6p");
-    			add_location(div2, file, 32, 8, 641);
+    			add_location(div2, file, 28, 8, 522);
     			attr_dev(div3, "class", "remove-item svelte-1wcth6p");
-    			add_location(div3, file, 38, 4, 981);
+    			add_location(div3, file, 34, 4, 862);
     			attr_dev(div4, "class", "todo-item svelte-1wcth6p");
-    			add_location(div4, file, 31, 4, 609);
-    			add_location(main, file, 30, 0, 598);
+    			add_location(div4, file, 27, 4, 490);
+    			add_location(main, file, 26, 0, 479);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1108,9 +1108,7 @@ var app = (function () {
     	const dispatch = createEventDispatcher();
 
     	function deleteTodo() {
-    		if (confirm("Are you sure you want to delet this entry?")) {
-    			dispatch("deleteTodo", { id });
-    		} // Do nothing!
+    		dispatch("deleteTodo", { id });
     	}
 
     	function toggleComplete() {
@@ -1144,8 +1142,7 @@ var app = (function () {
     		completed,
     		dispatch,
     		deleteTodo,
-    		toggleComplete,
-    		confirm
+    		toggleComplete
     	});
 
     	$$self.$inject_state = $$props => {
@@ -1585,7 +1582,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(todoitems.$$.fragment);
-    			attr_dev(div, "class", "todo-item svelte-r69pbd");
+    			attr_dev(div, "class", "todo-item svelte-jfiro5");
     			add_location(div, file$1, 115, 12, 3365);
     		},
     		m: function mount(target, anchor) {
@@ -1739,45 +1736,45 @@ var app = (function () {
     			div6 = element("div");
     			button4 = element("button");
     			button4.textContent = "Clear Completed";
-    			attr_dev(h1, "class", "svelte-r69pbd");
+    			attr_dev(h1, "class", "svelte-jfiro5");
     			add_location(h1, file$1, 95, 8, 2583);
     			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "class", "todo-input svelte-r69pbd");
+    			attr_dev(input0, "class", "todo-input svelte-jfiro5");
     			attr_dev(input0, "placeholder", "click a to-do, select target date, and hit enter...");
     			add_location(input0, file$1, 96, 8, 2611);
-    			attr_dev(div0, "class", "date svelte-r69pbd");
+    			attr_dev(div0, "class", "date svelte-jfiro5");
     			add_location(div0, file$1, 99, 12, 2805);
-    			attr_dev(button0, "class", "enterButton svelte-r69pbd");
+    			attr_dev(button0, "class", "enterButton svelte-jfiro5");
     			add_location(button0, file$1, 111, 8, 3231);
     			attr_dev(div1, "class", "wrapper");
     			add_location(div1, file$1, 98, 8, 2771);
-    			attr_dev(input1, "class", "inner-container-input svelte-r69pbd");
+    			attr_dev(input1, "class", "inner-container-input svelte-jfiro5");
     			attr_dev(input1, "type", "checkbox");
     			add_location(input1, file$1, 120, 24, 3600);
     			add_location(label, file$1, 120, 17, 3593);
     			add_location(div2, file$1, 120, 12, 3588);
     			add_location(div3, file$1, 121, 12, 3715);
-    			attr_dev(div4, "class", "inner-container svelte-r69pbd");
+    			attr_dev(div4, "class", "inner-container svelte-jfiro5");
     			add_location(div4, file$1, 119, 8, 3546);
     			add_location(strong, file$1, 125, 102, 3927);
-    			attr_dev(button1, "class", "svelte-r69pbd");
+    			attr_dev(button1, "class", "svelte-jfiro5");
     			toggle_class(button1, "active", /*currentFilter*/ ctx[1] === "all");
     			add_location(button1, file$1, 125, 16, 3841);
-    			attr_dev(button2, "class", "svelte-r69pbd");
+    			attr_dev(button2, "class", "svelte-jfiro5");
     			toggle_class(button2, "active", /*currentFilter*/ ctx[1] === "active");
     			add_location(button2, file$1, 126, 16, 3973);
-    			attr_dev(button3, "class", "svelte-r69pbd");
+    			attr_dev(button3, "class", "svelte-jfiro5");
     			toggle_class(button3, "completed", /*currentFilter*/ ctx[1] === "completed");
     			add_location(button3, file$1, 127, 16, 4097);
     			add_location(div5, file$1, 124, 12, 3819);
-    			attr_dev(button4, "class", "svelte-r69pbd");
+    			attr_dev(button4, "class", "svelte-jfiro5");
     			add_location(button4, file$1, 130, 16, 4270);
     			add_location(div6, file$1, 129, 12, 4248);
-    			attr_dev(div7, "class", "inner-container svelte-r69pbd");
+    			attr_dev(div7, "class", "inner-container svelte-jfiro5");
     			add_location(div7, file$1, 123, 8, 3777);
-    			attr_dev(div8, "class", "container svelte-r69pbd");
+    			attr_dev(div8, "class", "container svelte-jfiro5");
     			add_location(div8, file$1, 94, 4, 2551);
-    			attr_dev(main, "class", "svelte-r69pbd");
+    			attr_dev(main, "class", "svelte-jfiro5");
     			add_location(main, file$1, 92, 0, 2539);
     		},
     		l: function claim(nodes) {
@@ -1962,8 +1959,8 @@ var app = (function () {
     	function addTodo() {
     		if (newTodoTitle === "") {
     			alert("Please enter atleast your To-Do");
-    		} else if (newTodoTitle.length > 30) {
-    			alert("To-Do length cannot exceed 30 characters");
+    		} else if (newTodoTitle.length > 50) {
+    			alert("To-Do length cannot exceed 50 characters");
     		} else {
     			$$invalidate(13, todos = [
     				...todos,

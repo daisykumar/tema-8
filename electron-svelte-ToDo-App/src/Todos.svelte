@@ -8,6 +8,7 @@
     // import any components
     import { Button, Checkbox, Datefield} from 'svelte-mui';
     
+
     let checked = true;
     let newTodoTitle = '';
     let currentFilter = 'all';
@@ -91,7 +92,6 @@ function submit(event) {
 </script>
 
 <main>
-
     <div class="container">
         <h1>my to-dos </h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
@@ -136,10 +136,13 @@ function submit(event) {
 
 <style>
 	:global(:root) {
-        --primary: rgb(73, 71, 75);
+        --primary: #665A70;
 	}
+
     main{
         padding: 0 20px 20px 20px;
+        background: white;
+
     }
     .container {
         max-width: 800px;
@@ -184,6 +187,8 @@ function submit(event) {
         font-size: 18px;
         margin-bottom: 0;
         font-family: 'Quicksand', sans-serif;
+        border-radius: 5px;
+        background: #FCFCFC;
     }
 
     .todo-item{

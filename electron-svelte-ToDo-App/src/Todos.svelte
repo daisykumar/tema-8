@@ -39,7 +39,7 @@
         if (newTodoTitle === ""){
             alert('Please enter atleast your To-Do');
         }
-        else if (newTodoTitle.length > 50){alert('To-Do length cannot exceed 50 characters');}
+        else if (newTodoTitle.length > 30){alert('To-Do length cannot exceed 30 characters');}
         else {
             todos = [...todos, {
                 id: nextId,
@@ -119,7 +119,7 @@ function submit(event) {
         {/each}
         <div class="inner-container">
             <div><label><input class="inner-container-input" type="checkbox" on:change={checkAllTodos}>Check All</label></div>
-            <div>{todosRemaining} Items Left</div>
+            <div class="leftItems">{todosRemaining} Items Left</div>
         </div>
         <div class="inner-container">
             <div>
@@ -150,7 +150,8 @@ function submit(event) {
         text-align: center;
         margin: 0 50px 0 50px;
         padding: 0 50px 20px 50px;
-       
+        font-family: 'Quicksand', sans-serif;
+
     }
 
     .date{
@@ -170,6 +171,7 @@ function submit(event) {
         color: white;
         text-transform: uppercase;
         border-radius: 5px;
+        font-family: 'Quicksand', sans-serif;
     }
 
     .enterButton:hover{
@@ -181,11 +183,15 @@ function submit(event) {
         padding: 10px, 20px 0px 20px;
         font-size: 18px;
         margin-bottom: 0;
+        font-family: 'Quicksand', sans-serif;
     }
 
     .todo-item{
         background-color: none;
-       
+        font-family: 'Montserrat', sans-serif;
+    }
+    .leftItems{
+        font-family: 'Montserrat', sans-serif;
     }
     .inner-container {
         display: flex;
@@ -199,13 +205,16 @@ function submit(event) {
     }
     .inner-container-input {
         margin-right: 12px;
+        font-family: 'Montserrat', sans-serif;
     }
+
     button {
         font-size: 18px;
         background-color: rgb(230, 225, 235);
         border-radius: 5px;
         appearance: none;
         border: none;
+        font-family: 'Quicksand', sans-serif;
     }
     button:hover {
         background: lightseagreen;
@@ -216,18 +225,5 @@ function submit(event) {
     .active, .completed {
         background: lightseagreen;
     }
-	@media (max-width: 410px) {
-		main {
-            margin: 0 auto;
-            display: grid;
-            grid-gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));		
-        }
-        h1{
-            font-size: 30px;
-        }
-        .enterButton{
-            margin: 1rem;
-        }
-    }
+
 </style>

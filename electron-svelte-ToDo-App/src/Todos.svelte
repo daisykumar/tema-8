@@ -50,8 +50,9 @@
             }];
             nextId = nextId + 1;
             newTodoTitle = '';
-            toDoItemDate = '';
-    }
+        }
+         toDoItemDate = '';
+
     }
 
     $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
@@ -88,7 +89,7 @@ function submit(event) {
     addTodo();
   }
 }
-
+    $: console.log(toDoItemDate)
 </script>
 
 <main>
@@ -101,11 +102,6 @@ function submit(event) {
                 <Datefield format='DD-MM-YYYY' 
                     icon=false
                     bind:value={toDoItemDate}
-                    isAllowed={toDoItemDate => {
-                    const millisecs = toDoItemDate;
-                    if (millisecs < Date.now()) return false;
-                    return true;
-                }}
                 ></Datefield>
             </div> 
         
@@ -138,23 +134,24 @@ function submit(event) {
 	:global(:root) {
         --primary: #665A70;
 	}
-
+    :global(body){
+        background: #20b2aa;
+    }
     main{
         padding: 0 20px 20px 20px;
         background: white;
-
     }
+    
     .container {
         max-width: 800px;
     }
     h1{
-        font-size: 100px;
+        font-size: 90px;
         color: #AD47FF;
         text-align: center;
         margin: 0 50px 0 50px;
         padding: 0 50px 20px 50px;
         font-family: 'Quicksand', sans-serif;
-
     }
 
     .date{
@@ -168,7 +165,7 @@ function submit(event) {
         display: inline-block;
         width:100px;
         height:40px;
-        background-color: lightseagreen;
+        background-color: #AD47FF;
         font: 10px;
         letter-spacing: 1.25px;
         color: white;
@@ -178,7 +175,7 @@ function submit(event) {
     }
 
     .enterButton:hover{
-        background-color: rgb(31, 161, 155);
+        background-color: #5e298a;
     }
 
     .todo-input {

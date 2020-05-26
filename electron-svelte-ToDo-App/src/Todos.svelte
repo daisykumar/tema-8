@@ -156,8 +156,6 @@ $: console.log(toDoItemDate)
         max-width: 800px;
     }
 
-
-
     h1{
         font-size: 90px;
         color: #AD47FF;
@@ -198,7 +196,8 @@ $: console.log(toDoItemDate)
         margin-bottom: 0;
         font-family: 'Quicksand', sans-serif;
         border-radius: 5px;
-        background: rgb(235, 231, 231);
+        background: rgb(230, 225, 235);
+        border: none;
     }
 
     .todo-item{

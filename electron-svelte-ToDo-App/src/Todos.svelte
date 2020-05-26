@@ -97,7 +97,7 @@ $: console.log(toDoItemDate)
 
 <main>
     <div class="container">
-        <h1>my to-dos </h1>
+        <h1>Organise</h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
 
         <div class="wrapper">
@@ -157,7 +157,7 @@ $: console.log(toDoItemDate)
     }
 
     h1{
-        font-size: 90px;
+        font-size: 6em;
         color: #AD47FF;
         text-align: center;
         margin: 0 50px 0 50px;

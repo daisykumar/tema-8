@@ -89,7 +89,10 @@ function submit(event) {
     addTodo();
   }
 }
-    $: console.log(toDoItemDate)
+
+$: console.log(toDoItemDate)
+
+
 </script>
 
 <main>
@@ -127,24 +130,34 @@ function submit(event) {
                 <button on:click={clearCompleted}>Clear Completed</button>
             </div>
         </div>
+    </div>
  
 </main>
 
 <style>
+
 	:global(:root) {
         --primary: #665A70;
 	}
     :global(body){
-        background: #20b2aa;
+        background-color: lightseagreen;
+        background-image: url("https://image.freepik.com/free-photo/multicolored-bright-soft-bubbles-glowing-drops_23-2148205139.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
+
     main{
         padding: 0 20px 20px 20px;
-        background: white;
+        background: rgb(250, 250, 250);
     }
-    
+
     .container {
         max-width: 800px;
     }
+
+
+
     h1{
         font-size: 90px;
         color: #AD47FF;
@@ -185,13 +198,13 @@ function submit(event) {
         margin-bottom: 0;
         font-family: 'Quicksand', sans-serif;
         border-radius: 5px;
-        background: #FCFCFC;
+        background: rgb(235, 231, 231);
     }
 
     .todo-item{
-        background-color: none;
         font-family: 'Montserrat', sans-serif;
     }
+    
     .leftItems{
         font-family: 'Montserrat', sans-serif;
     }
@@ -200,7 +213,7 @@ function submit(event) {
         align-items: center;
         justify-content: space-between;
         font-size: 16px;
-        border-top: 2px solid lightgrey;
+        border-top: 2px solid lightgray;
         padding-top: 15px;
         margin-bottom: 13px;
  

@@ -64,7 +64,6 @@
         align-items: center;
     }
     .todo-item-label {
-        border: 1px solid white;
         margin-left: 12px;
     }
 

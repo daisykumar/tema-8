@@ -97,7 +97,7 @@ $: console.log(toDoItemDate)
 
 <main>
     <div class="container">
-        <h1>Organise</h1>
+        <h1>QUERTO</h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
 
         <div class="wrapper">

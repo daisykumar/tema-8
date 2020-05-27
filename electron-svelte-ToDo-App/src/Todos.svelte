@@ -97,7 +97,7 @@ $: console.log(toDoItemDate)
 
 <main>
     <div class="container">
-        <h1>QUERTO</h1>
+        <h1>Listicle</h1>
         <input type="text" class="todo-input" placeholder="click a to-do, select target date, and hit enter..." bind:value={newTodoTitle} on:keydown={submit}>
 
         <div class="wrapper">
@@ -145,11 +145,13 @@ $: console.log(toDoItemDate)
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        padding: 1rem;
     }
 
     main{
         padding: 0 20px 20px 20px;
-        background: rgb(250, 250, 250);
+        background: rgb(250, 250, 250, 0.9);
+        border-radius: 5px;
     }
 
     .container {
@@ -157,7 +159,7 @@ $: console.log(toDoItemDate)
     }
 
     h1{
-        font-size: 6em;
+        font-size: 5rem;
         color: #AD47FF;
         text-align: center;
         margin: 0 50px 0 50px;

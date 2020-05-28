@@ -3,7 +3,6 @@
 
 	
 </script>
-<main>
+
 <Todos />
 
-</main>

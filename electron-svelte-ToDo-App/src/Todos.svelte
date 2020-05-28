@@ -147,14 +147,19 @@ $: console.log(toDoItemDate)
         background-attachment: fixed;
         padding: 1rem;
     }
-
-    main{
-        padding: 0 20px 20px 20px;
-        background: rgb(250, 250, 250, 0.9);
-        border-radius: 5px;
+    :global(*){
+        box-sizing: border-box;
     }
 
-    .container {
+    main{
+        background: rgb(250, 250, 250, 0.9);
+        border-radius: 5px;
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .container{
         max-width: 800px;
     }
 

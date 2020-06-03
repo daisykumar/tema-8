@@ -21,3 +21,4 @@ npm start
 
 Setup [Electron with Svelte](https://fireship.io/snippets/svelte-electron-setup) from scratch. 
 Build cool projects with [Electron](https://fireship.io/tags/electron). 
+
